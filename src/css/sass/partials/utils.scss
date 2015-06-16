@@ -21,3 +21,117 @@
 .reset-box {
   @include reset-box;
 }
+
+.white {
+	background-color: white;
+}
+
+.full {
+	height: 100vh;
+	min-height: 700px;
+}
+
+.jumbo {
+	height: 75vh;
+	min-height: 400px;
+}
+
+.third {
+	height: 66.6666vh;
+	min-height: 525px;
+	.image, .content {
+		@include omega;
+		@include span-columns(12);
+		height: 50%;
+		text-align: center;
+		background-size: cover;
+		background-position: center center;
+		@include media(769px){
+			height: 100%;
+			@include span-columns(6);
+			width: 50%;
+			@include omega;
+		}
+	}
+	.image{
+		background-color: red;
+	}
+	.content {
+		padding: 8vw 8vw 10vw;
+		@media screen and (max-width: 768px){
+			height: auto;
+		}
+	}
+}
+
+.box-content {
+	text-align: center;
+	h2 {
+		text-transform: uppercase;
+		font-style: normal;
+		color: $hotpink;
+		font-weight: 600;
+		letter-spacing: 1px;
+	}
+	p {
+		margin-bottom: 75px;
+	}
+	&.footer-third p {
+		margin-bottom: 0.5em;
+	}
+}
+
+.spotlight {
+	padding: 0 10%;
+	padding-top: 10vw;
+	text-align: center;
+	color: white;
+	text-transform: uppercase;
+	@include span-columns(12);
+	h3 {
+		font-weight: 500;
+	}
+	span {
+		margin-top: 25px;
+		display: block;
+		font-size: 300%;
+		font-weight: 600;
+		margin-bottom: 50px;
+	}
+	@include media(769px){
+		@include span-columns(7);
+	}
+}
+
+.read-mores {
+	padding: 15px;
+	text-transform: uppercase;
+	color: $hotpink;
+	border: 3px solid $hotpink;
+	border-radius: 10px;
+	@include linear-gradient(to top, rgba(0,0,0,0) 50%, $hotpink 50%);
+	background-size: 100% 200%;
+	background-position: 300px 235px;
+	@include transition(all 0.5s ease-in-out);
+	@include media(769px){
+		font-size: 20px;
+		padding: 15px 45px;
+		background-position: 300px 378px;
+	}
+	&:hover {
+		color: white;
+		text-decoration: none;
+		background-position: 300px 282px;
+		@include media(769px){
+			background-position: 300px 432px;
+		}
+	}
+}
+
+
+.cs-header-2 {
+	color: $hotpink;
+	font-style: normal;
+	text-transform: uppercase;
+	font-weight: 600;
+}

@@ -4,4 +4,192 @@
  */
 
 
-.footer {}
+.footer {
+
+	.newsletter {
+		padding: 40px 10%;
+		padding-top: 40px;
+		background-color: $grey;
+		min-height: 150px;
+		height: auto;
+		text-align: center;
+		@include media(769px){
+			padding-top: 45px;
+		}
+		.search-bar {
+			@include media(769px){
+				position: relative;
+				left: -55px;
+				width: 100%;
+			}
+			span {
+				color: white;
+				text-transform: uppercase;
+				margin-right: 2.5%;
+				font-size: 140%;
+				font-weight: bold;
+				letter-spacing: 0.4px;
+			}
+			  width: 75%;
+			  max-width: 800px;
+			  margin: 0 auto;
+			  text-align: center;
+			  form {  
+			    position: relative;
+			    display: inline-block;
+			    left: -25%;
+			    @include media(500px){
+			    	left: -12%;
+			    }
+			    @include media(739px){
+			    	left: 0;
+			    }
+			    @include media(769px){
+			    	min-width: 300px;
+			    }
+			  }
+
+			  input {
+			    box-sizing: border-box;
+			    display: inline-block;
+			    margin: 0;
+			    position: relative;
+			    width: 100%;
+			    background-color: rgba(0,0,0,0);
+			    border: 3px solid white;
+			    border-radius: 10px;
+			    color: white;
+			    margin-right: 10px;
+			    padding: 15px;
+
+			  }
+
+			  button {
+			    @include position(absolute, 0 -100px 0 null);
+			    @include transition(all 0.5s ease-in);
+			    padding: 15px 15px;
+			    background-color: rgba(0,0,0,0);
+			    border: 3px solid white;
+			    border-radius: 10px;
+			    text-transform: uppercase;
+			    @include linear-gradient(to top, rgba(0,0,0,0) 50%, white 50%);
+			    background-position: 100px 51px;
+			    background-size: 200%;
+			    &:hover {
+			    	background-position: 100px 102px;
+			    	color: $grey;
+			    }
+			    @include media(769px){
+			    	@include position(absolute, 0 -130px 0 null);
+			    	padding: 15px 30px;
+			    }
+
+			  }
+			  
+			  img {
+			    height: 12px;
+			    opacity: 0.7;
+			  }
+			}
+	}
+
+	.footer-third {
+		@include span-columns(12);
+		padding: 35px 2.5%;
+		background-color: $lightpink;
+		text-align: center;
+		&.pink {
+			background-color: $hotpink;
+		}
+		min-height: 200px;
+		h2, p {
+			color: white;
+		}
+		.read-mores {
+			color: white;
+			border-color: white;
+		}
+		@include media(769px){
+			@include span-columns(4);
+			@include omega;
+			width: 33.3333%;
+			height: 400px;
+		}
+	}
+
+	.connect {
+		ul {
+			list-style-type: none;
+			margin-bottom: 55px;
+			@include media(769px){
+				margin-bottom: 65px;
+			}
+			li {
+				display: inline-block;
+				a {
+					display: block;
+					width: 45px;
+					margin: 0 10px;
+					height: 45px;
+					background-image: url("img/footer-socials.png");
+					@include transition(opacity 0.5s ease-in);
+					background-position-y: -15px;
+					&:hover {
+						opacity: 0.40;
+					}
+				}
+				.fb {
+					background-position-x: -15px;
+				}
+				.twit {
+					background-position-x: -83px;
+				}
+				.email {
+					background-position-x: -148px;
+				}
+				.rss {
+					background-position-x: -218px;
+				}
+			}
+		}
+		.read-mores {
+			@include linear-gradient(to top, $hotpink 50%, white 50%);
+			color: white;
+			&:hover {
+				color: $hotpink;
+			}
+		}
+	}
+
+	.copyright {
+		background-color: $grey;
+		padding: 3.5vw 2.5vw 2.5vw 2.5vw;
+		color: white;
+		.copy-left, .copy-right {
+			width: 100%;
+		}
+		.copy-left {
+			@include media(769px){
+				@include span-columns(6);
+			}
+		}
+		.copy-right {
+			@include media(769px){
+				@include span-columns(6);
+			}
+		}
+		a {
+			@include media(769px){
+				float: right;
+			}
+			margin-left: 2%;
+			color: white;
+		}
+	}
+
+
+
+
+
+
+}

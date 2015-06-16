@@ -1,12 +1,61 @@
 			<!-- footer -->
 			<footer class="footer" role="contentinfo">
 
-				<!-- copyright -->
-				<p class="copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>. <?php _e('Powered by', 'html5blank'); ?>
-					<a href="//wordpress.org" title="WordPress">WordPress</a> &amp; <a href="//html5blank.com" title="HTML5 Blank">HTML5 Blank</a>.
-				</p>
-				<!-- /copyright -->
+				<div class="newsletter">
+					<div class="search-bar">
+						<span>Sign Up For Our Newsletter</span>
+					 	<form role="search">
+					    <input type="search" placeholder="Enter Search">
+					    <button class="cs-button" type="submit">
+					      Submit
+					    </button>
+						  </form>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="footer-third box-content">
+						<h2>Contact Us</h2>
+						<address>
+							<p>200 North 22nd Street<br>
+						       Richmond, VA 23233</p>
+						</address>
+						<p>Phone (804) 644 9590</p>
+						<p>Fax (804) 644 9596</p>
+						<p>info@childsavers.org</p>
+					</div>
+					<div class="connect footer-third box-content pink">
+						<h2>Connect</h2>
+						<ul>
+							<li>
+								<a class="fb" href="#"></a>
+							</li>
+							<li>
+								<a class="twit" href="#"></a>
+							</li>
+							<li>
+								<a class="email" href="#"></a>
+							</li>
+							<li>
+								<a class="rss" href="#"></a>
+							</li>
+						</ul>
+						<a class="read-mores" href="#">Donate</a>
+					</div>
+					<div class="footer-third box-content">
+						<h2>Calendar</h2>
+					</div>
+				</div>
+
+				<div class="copyright">
+					<div class="copy-left">
+						<span>Copyright 2015 ChildSavers. All Rights Reserved.</span>
+					</div>
+					<div class="copy-right">
+						<a href="#">Privacy Policy</a>
+						<a href="#">Contact Us</a>
+					</div>
+				</div>
 
 			</footer>
 			<!-- /footer -->
@@ -25,6 +74,7 @@
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
 		</script>
+		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 
 	</body>
 </html>
