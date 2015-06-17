@@ -12,6 +12,7 @@
 		$cache.scrollButton = $(".scroll-down");
 		$cache.valueSlider = $(".values-slider");
 		$cache.waypoint = $(".waypoint");
+		$cache.ajaxButton = $("#load-more");
 
 
 		// Init any jquery plugins here
@@ -34,7 +35,7 @@
 		$cache.valueSlider.slick({
 			infinite: true,
 			slidesToShow: 3,
-			slidesToScroll: 1,
+			slidesToScroll: 3,
 			dots: true,
 			responsive: [
 			    {
@@ -83,28 +84,69 @@
 		clickAppear($cache.mobileExit, $cache.mobileOverlay);
 		clickAppear($cache.mobileShow, $cache.mobileOverlay);
 
+		// on blog post pages, we want each post to alternate which side the image is on
+		function oddSort(){}
+
 		function checkWidth() {
 	        var windowsize = $(window).width();
 	        if (windowsize > 768) {
 	            var $kid = $pane.detach();
 	            $kid.appendTo(".kid2box");
+
+	            var $kid2 = $pane2.detach();
+	            $kid2.prependTo(".kid3box");
+
+	            $cache.oddPosts = $(".blog .box-content:nth-child(odd)");
+
+	            $cache.oddPosts.each(function(){
+	            	var $image = $(this).find(".image");
+	            	var $newimg = $image.detach();
+	            	$newimg.appendTo($(this));
+
+	            });
 	        }
 	        else {
+	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd)");
+
+	            $cache.oddPosts.each(function(){
+	            	var $image = $(this).find(".image");
+	            	var $newimg = $image.detach();
+	            	$newimg.prependTo($(this));
+
+	            });
+
 	        	var $kid = $pane.detach();
 	        	$kid.prependTo(".kid2box");
+
+	        	var $kid2 = $pane2.detach();
+	        	$kid2.appendTo(".kid3box");
 	        }
 	    }
 		var $window = $(window);
 	    var $pane = $('#kid2');
+	    var $pane2 = $('.about #kid3');
 
 	    // Execute on load
 	    checkWidth();
 	    // Bind event listener
 	    $(window).resize(checkWidth);
 
+	    // run the window width checks after ajax calls as well
+	    $.fn.almComplete = function(alm){
+	    	checkWidth();
+	    	// Bind event listener
+	    	$(window).resize(checkWidth);	
+	    };
+
 
 
 	    // All other needs can go here
+
+	    // removing slick dots inner content - we do it on resize too
+	    $(".slick-dots button").html("");
+
+	    // give class to ajax button for styles
+	    $cache.ajaxButton.addClass("read-mores");
 
 		
 	});

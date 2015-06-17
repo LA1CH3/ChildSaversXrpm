@@ -318,6 +318,10 @@ input[type="search"] {
   line-height: inherit;
 }
 
+button:focus {
+  outline: 0;
+}
+
 ::-moz-selection {
   background-color: #04A4CC;
   color: #fff;
@@ -343,7 +347,7 @@ hr {
 }
 
 p {
-  color: #333;
+  color: black;
   line-height: 1.5;
 }
 
@@ -391,6 +395,7 @@ h2 {
 @media screen and (min-width: 769px) {
   h2 {
     font-size: 2.4em;
+    letter-spacing: 1px;
   }
 }
 
@@ -480,14 +485,8 @@ p.author {
   min-height: 700px;
 }
 
-.jumbo {
-  height: 75vh;
-  min-height: 400px;
-}
-
 .third {
-  height: 66.6666vh;
-  min-height: 525px;
+  height: 460px;
 }
 .third .image, .third .content {
   margin-right: 0;
@@ -614,6 +613,11 @@ p.author {
   }
 }
 
+.cs-button {
+  -webkit-transition: all 0.5s ease-in;
+  transition: all 0.5s ease-in;
+}
+
 .cs-header-2 {
   color: #ec154f;
   font-style: normal;
@@ -687,7 +691,7 @@ p.author {
 }
 .header .nav-mobile-button-wrap .nav-mobile-show {
   position: relative;
-  top: 45px;
+  top: 40px;
 }
 @media screen and (min-width: 769px) {
   .header .nav-mobile-button-wrap {
@@ -698,7 +702,7 @@ p.author {
 .hamburger {
   position: absolute;
   top: 75%;
-  left: 75%;
+  left: 70%;
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 50px;
@@ -907,7 +911,7 @@ p.author {
   background-image: -webkit-linear-gradient(bottom, transparent 50%, white 50%);
   background-image: linear-gradient(to top,transparent 50%, white 50%);
   background-position: 100px 51px;
-  background-size: 200%;
+  background-size: 200% 200%;
 }
 .footer .newsletter .search-bar button:hover {
   background-position: 100px 102px;
@@ -983,22 +987,22 @@ p.author {
   background-image: url("img/footer-socials.png");
   -webkit-transition: opacity 0.5s ease-in;
   transition: opacity 0.5s ease-in;
-  background-position-y: -15px;
+  background-position: 0 -15px;
 }
 .footer .connect ul li a:hover {
   opacity: 0.40;
 }
 .footer .connect ul li .fb {
-  background-position-x: -15px;
+  background-position: -15px -15px;
 }
 .footer .connect ul li .twit {
-  background-position-x: -83px;
+  background-position: -83px -15px;
 }
 .footer .connect ul li .email {
-  background-position-x: -148px;
+  background-position: -148px -15px;
 }
 .footer .connect ul li .rss {
-  background-position-x: -218px;
+  background-position: -218px -15px;
 }
 .footer .connect .read-mores {
   background-color: #ec154f;
@@ -1167,6 +1171,7 @@ p.author {
   position: absolute;
   top: 100px;
   left: 50px;
+  width: 10%;
 }
 @media screen and (min-width: 769px) {
   .splash .shooting {
@@ -1178,6 +1183,7 @@ p.author {
   position: absolute;
   top: 200px;
   right: 50px;
+  width: 10%;
 }
 @media screen and (min-width: 769px) {
   .splash .shooting-right {
@@ -1209,6 +1215,12 @@ p.author {
   background-color: black;
   background-size: cover;
   background-position: center center;
+  min-height: 300px;
+}
+@media screen and (min-width: 769px) {
+  .jumbo {
+    min-height: 500px;
+  }
 }
 
 #anna {
@@ -1255,7 +1267,96 @@ p.author {
 .shared {
   text-align: center;
   padding: 15px 15%;
+  padding-top: 45px;
 }
 .shared p {
   text-align: left;
+}
+
+.values-slider {
+  margin-top: 65px;
+}
+.values-slider .slick-slide {
+  padding: 0 25px;
+}
+.values-slider .slick-slide img {
+  margin: 0 auto;
+  height: 185px;
+  width: auto;
+  margin-bottom: 45px;
+}
+.values-slider h2 {
+  color: black;
+}
+.values-slider .slick-prev, .values-slider .slick-next {
+  display: none !important;
+}
+.values-slider .slick-dots li {
+  display: inline-block;
+}
+.values-slider .slick-dots li button {
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  padding: 0;
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: 4px solid black;
+  border-radius: 40px;
+  margin: 0 10px;
+  color: white;
+}
+.values-slider .slick-dots li.slick-active button {
+  background-color: black;
+  color: black;
+}
+
+#load-more {
+  display: block;
+  margin: 45px auto;
+  background-color: transparent;
+  background-position: 300px 308px;
+}
+#load-more:hover {
+  background-position: 300px 352px;
+}
+@media screen and (min-width: 769px) {
+  #load-more {
+    background-position: 300px 350px;
+  }
+  #load-more:hover {
+    background-position: 300px 400px;
+  }
+}
+
+.blog .third .content {
+  padding: 65px 10%;
+}
+
+@-moz-document url-prefix() {
+  .read-mores {
+    background-position: 300px 240px;
+  }
+  .read-mores:hover {
+    background-position: 300px 288px;
+  }
+  @media screen and (min-width: 769px) {
+    .read-mores {
+      background-position: 300px 280px;
+    }
+    .read-mores:hover {
+      background-position: 300px 336px;
+    }
+  }
+
+  .cs-button {
+    background-position: 100px 51px !important;
+  }
+  .cs-button:hover {
+    background-position: 100px 102px !important;
+  }
+
+  .connect li a {
+    background-position: 0 -35px;
+  }
 }

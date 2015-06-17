@@ -31,14 +31,8 @@
 	min-height: 700px;
 }
 
-.jumbo {
-	height: 75vh;
-	min-height: 400px;
-}
-
 .third {
-	height: 66.6666vh;
-	min-height: 525px;
+	height: 460px;
 	.image, .content {
 		@include omega;
 		@include span-columns(12);
@@ -128,6 +122,9 @@
 	}
 }
 
+.cs-button {
+	@include transition(all 0.5s ease-in);
+}
 
 .cs-header-2 {
 	color: $hotpink;

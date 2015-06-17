@@ -45,6 +45,7 @@
 		position: absolute;
 		top: 100px;
 		left: 50px;
+		width: 10%;
 		@include media(769px){
 			top: 150px;
 			left: 100px;
@@ -55,6 +56,7 @@
 		position: absolute;
 		top: 200px;
 		right: 50px;
+		width: 10%;
 		@include media(769px){
 			top: 250px;
 			right: 100px;
@@ -84,6 +86,10 @@
 	background-color: black;
 	background-size: cover;
 	background-position: center center;
+	min-height: 300px;
+	@include media(769px){
+		min-height: 500px;
+	}
 }
 
 #anna {
@@ -130,7 +136,101 @@
 .shared {
 	text-align: center;
 	padding: 15px 15%;
+	padding-top: 45px;
 	p {
 		text-align: left;
 	}
+}
+
+// about page slider
+.values-slider {
+	margin-top: 65px;
+	.slick-slide {
+		padding: 0 25px;
+	}
+	.slick-slide img {
+		margin: 0 auto;
+		height: 185px;
+		width: auto;
+		margin-bottom: 45px;
+	}
+	h2 {
+		color: black;
+	}
+	.slick-prev, .slick-next {
+		display: none !important;
+	}
+	.slick-dots {
+		li {
+			display: inline-block;
+			button {
+				@include transition(all 0.5s ease-in-out);
+				padding: 0;
+				width: 25px;
+				height: 25px;
+				background-color: rgba(0,0,0,0);
+				border: 4px solid black;
+				border-radius: 40px;
+				margin: 0 10px;
+				color: white;
+			}
+			&.slick-active {
+				button {
+					background-color: black;
+					color: black;
+				}
+			}
+		}
+	}
+}
+
+// ajax load-more button 
+#load-more {
+	display: block;
+	margin: 45px auto;
+	background-color: rgba(0,0,0,0);
+	background-position: 300px 308px;
+	&:hover {
+		background-position: 300px 352px;
+	}
+	@include media(769px){
+		background-position: 300px 350px;
+		&:hover {
+			background-position: 300px 400px;
+
+		}
+	}
+}
+
+.blog .third .content {
+	padding: 65px 10%;
+}
+
+
+
+
+// Firefox specific CSS
+@-moz-document url-prefix() { 
+  .read-mores {
+     background-position: 300px 240px;
+     &:hover {
+     	background-position: 300px 288px;
+     }
+     @include media(769px){
+     	background-position: 300px 280px;
+     	&:hover {
+     		background-position: 300px 336px;
+     	}
+     }
+  }
+  .cs-button {
+  	background-position: 100px 51px !important;
+  	&:hover {
+  		background-position: 100px 102px !important;
+  	}
+  }
+  .connect li a {
+  	background-position: 0 -35px;
+  }
+
 }

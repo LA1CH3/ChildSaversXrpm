@@ -57,6 +57,10 @@ input[type="search"] {
   line-height: inherit;
 }
 
+button:focus {
+  outline: 0;
+}
+
 // Text selection
 ::selection {
   background-color: $selection-bg;
@@ -77,7 +81,7 @@ h1, h2, h3, p {
   }
 
   p {
-    color: $base-font-color;
+    color: black;
     line-height: $base-line-height;
   }
 
@@ -123,6 +127,7 @@ h1, h2, h3, p {
 
     @include media(769px) {
       font-size: 2.4em;
+      letter-spacing: 1px;
     }
   }
 

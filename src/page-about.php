@@ -14,26 +14,34 @@
 	<section class="waypoint">
 		<div class="jumbo jumbo-about">
  			<h1>About Us</h1>
- 			<img class="city" src="<?php echo get_template_directory_uri() . '/img/homepage-rva.png'; ?>" alt="Richmond, Virginia">
+ 			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
  		</div>
 	</section>
 	<section class="story">
+
+	<?php if(have_posts()) : while(have_posts()) : the_post(); 
+
+	// grabbing custom fields
+	$mission = get_field('mission');
+	$vision = get_field('vision'); ?>
+
+
 		<h2>Our Story</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae nobis fugiat iusto distinctio quasi cum aperiam reiciendis? Illum veniam dolorem ratione, beatae possimus et labore rem, quasi in, repellat dolore.</p>
+		<?php the_content(); ?>
 	</section>
 	<section class="tiles-about">
 		<div class="row third box-content">
 				<div class="content">
 					<h2>Mission</h2>
-					<p>Content here.</p>
+					<?php echo $mission; ?>
 				</div>
 				<div class="image" id="kid1"></div>
 			</div>
-			<div class="row third box-content">
+			<div class="row third box-content kid3box">
 				<div class="image" id="kid3"></div>
 				<div class="content">
 					<h2>Vision</h2>
-					<p>Content here.</p>
+					<?php echo $vision; ?>
 				</div>
 			</div>
 	</section>
@@ -41,38 +49,26 @@
 		<h2 class="cs-header-2">Statement of Shared Values</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi id modi, cum dignissimos quae explicabo iste, voluptatibus obcaecati in, molestiae nobis ratione. Perspiciatis quasi voluptatibus esse corrupti, suscipit saepe. Id?</p>
 		<div class="values-slider">
+
+		<?php if(have_rows('slider')):
+
+				while(have_rows('slider')) : the_row();
+
+				$image = get_sub_field('image');
+				$title = get_sub_field('title');
+				$content = get_sub_field('content');
+
+			?>
 			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
+				<?php echo wp_get_attachment_image($image, 'full'); ?>
+				<h2 class="cs-header-2"><?php echo $title; ?></h2>
+				<?php echo $content; ?>
 			</div>
-			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
-			</div>
-			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
-			</div>
-			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
-			</div>
-			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
-			</div>
-			<div>
-				<img src="<?php echo get_template_directory_uri() . '/img/hearts.png'; ?>" alt="Hearts">
-				<h2>Relationships</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam voluptas soluta, ipsa, perspiciatis temporibus praesentium illum facere itaque laudantium quo quis asperiores eligendi ullam. Perferendis labore voluptatibus velit voluptates nulla.</p>
-			</div>
+		<?php endwhile; endif; ?>
 		</div>
 	</section>
+
+<?php endwhile; endif; wp_reset_postdata(); ?>
 
 
 

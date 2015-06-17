@@ -8,11 +8,11 @@
 
 			<button class="scroll-down">&darr;</button>
 
-			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city.svg'; ?>" alt="Richmond, Virginia">
+			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
 
-			<img class="shooting" src="<?php echo get_template_directory_uri() . '/img/homepage-star.png'; ?>" alt="Richmond, Virginia">
+			<img class="shooting" src="<?php echo get_template_directory_uri() . '/img/shootingstar-1.svg'; ?>" alt="Richmond, Virginia">
 
-			<img class="shooting-right" src="<?php echo get_template_directory_uri() . '/img/homepage-star-right.png'; ?>" alt="Richmond, Virginia">
+			<img class="shooting-right" src="<?php echo get_template_directory_uri() . '/img/shootingstar-2.svg'; ?>" alt="Richmond, Virginia">
 
 		</section>
 		<!-- /section -->
