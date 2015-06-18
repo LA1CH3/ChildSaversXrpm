@@ -7,10 +7,10 @@
  			<h1>News</h1>
  			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
  		</div>
-	</section>
+</section>
 
 <section>
-	<?php echo do_shortcode('[ajax_load_more post_type="post" button_label="View More News" posts_per_page="4"]'); ?>
+	<?php echo do_shortcode('[ajax_load_more post_type="post" button_label="View More News" posts_per_page="4" transition="fade" destroy_after="3"]'); ?>
 </section>
 
 

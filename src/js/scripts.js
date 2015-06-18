@@ -37,6 +37,7 @@
 			slidesToShow: 3,
 			slidesToScroll: 3,
 			dots: true,
+			adaptiveHeight: true,
 			responsive: [
 			    {
 			      breakpoint: 1024,
@@ -48,7 +49,7 @@
 			      }
 			    },
 			    {
-			      breakpoint: 600,
+			      breakpoint: 1024,
 			      settings: {
 			        slidesToShow: 2,
 			        slidesToScroll: 2
@@ -96,7 +97,7 @@
 	            var $kid2 = $pane2.detach();
 	            $kid2.prependTo(".kid3box");
 
-	            $cache.oddPosts = $(".blog .box-content:nth-child(odd)");
+	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");
@@ -106,7 +107,7 @@
 	            });
 	        }
 	        else {
-	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd)");
+	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");

@@ -90,6 +90,9 @@
 	@include media(769px){
 		min-height: 500px;
 	}
+	@include media(1400px){
+		min-height: 700px;
+	}
 }
 
 #anna {
@@ -100,14 +103,32 @@
 	margin-top: 125px;
 	background-color: $lightblue;
 	text-align: center;
-	h1 {
+	h1, h2 {
 		padding-top: 100px;
+		position: relative;
+		z-index: 1;
 	}
 	.city {
 		position: absolute;
 		bottom: 0;
 		width: 100%;
 		left: 0;
+	}
+}
+
+.jumbo-help {
+	@extend .jumbo-about;
+	margin-top: 0;
+	background-image: url('img/help-girl.png');
+	padding: 0 10%;
+	h2 {
+		padding-top: 50px;
+		font-style: normal;
+		color: black;
+		font-weight: 700;
+		@include media(769px){
+			padding-top: 100px;
+		}
 	}
 }
 
@@ -133,6 +154,18 @@
 	}
 }
 
+.how-to-help .tiles-about .content {
+	padding: 45px 5%;
+	.read-mores {
+		color: white;
+		border-color: white;
+		@include linear-gradient(to top, $lightpink 50%, white 50%);
+		&:hover {
+			color: $lightpink;
+		}
+	}
+}
+
 .shared {
 	text-align: center;
 	padding: 15px 15%;
@@ -150,9 +183,12 @@
 	}
 	.slick-slide img {
 		margin: 0 auto;
-		height: 185px;
+		height: 100px;
 		width: auto;
 		margin-bottom: 45px;
+		@include media(769px){
+			height: 185px;
+		}
 	}
 	h2 {
 		color: black;
@@ -206,6 +242,9 @@
 	padding: 65px 10%;
 }
 
+.services .box-content h2 {
+	margin-bottom: 85px;
+}
 
 
 

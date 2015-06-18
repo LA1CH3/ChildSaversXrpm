@@ -1222,24 +1222,48 @@ p.author {
     min-height: 500px;
   }
 }
+@media screen and (min-width: 1400px) {
+  .jumbo {
+    min-height: 700px;
+  }
+}
 
 #anna {
   background-image: url("img/homepage-anna.png");
 }
 
-.jumbo-about {
+.jumbo-about, .jumbo-help {
   margin-top: 125px;
   background-color: #cce6f8;
   text-align: center;
 }
-.jumbo-about h1 {
+.jumbo-about h1, .jumbo-help h1, .jumbo-about h2, .jumbo-help h2 {
   padding-top: 100px;
+  position: relative;
+  z-index: 1;
 }
-.jumbo-about .city {
+.jumbo-about .city, .jumbo-help .city {
   position: absolute;
   bottom: 0;
   width: 100%;
   left: 0;
+}
+
+.jumbo-help {
+  margin-top: 0;
+  background-image: url("img/help-girl.png");
+  padding: 0 10%;
+}
+.jumbo-help h2 {
+  padding-top: 50px;
+  font-style: normal;
+  color: black;
+  font-weight: 700;
+}
+@media screen and (min-width: 769px) {
+  .jumbo-help h2 {
+    padding-top: 100px;
+  }
 }
 
 .story {
@@ -1264,6 +1288,20 @@ p.author {
   color: white;
 }
 
+.how-to-help .tiles-about .content {
+  padding: 45px 5%;
+}
+.how-to-help .tiles-about .content .read-mores {
+  color: white;
+  border-color: white;
+  background-color: #f05a66;
+  background-image: -webkit-linear-gradient(bottom, #f05a66 50%, white 50%);
+  background-image: linear-gradient(to top,#f05a66 50%, white 50%);
+}
+.how-to-help .tiles-about .content .read-mores:hover {
+  color: #f05a66;
+}
+
 .shared {
   text-align: center;
   padding: 15px 15%;
@@ -1281,9 +1319,14 @@ p.author {
 }
 .values-slider .slick-slide img {
   margin: 0 auto;
-  height: 185px;
+  height: 100px;
   width: auto;
   margin-bottom: 45px;
+}
+@media screen and (min-width: 769px) {
+  .values-slider .slick-slide img {
+    height: 185px;
+  }
 }
 .values-slider h2 {
   color: black;
@@ -1331,6 +1374,10 @@ p.author {
 
 .blog .third .content {
   padding: 65px 10%;
+}
+
+.services .box-content h2 {
+  margin-bottom: 85px;
 }
 
 @-moz-document url-prefix() {
