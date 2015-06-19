@@ -13,6 +13,7 @@
 		$cache.valueSlider = $(".values-slider");
 		$cache.waypoint = $(".waypoint");
 		$cache.ajaxButton = $("#load-more");
+		$cache.memberTrigger = $(".staff-type h2");
 
 
 		// Init any jquery plugins here
@@ -85,6 +86,11 @@
 		clickAppear($cache.mobileExit, $cache.mobileOverlay);
 		clickAppear($cache.mobileShow, $cache.mobileOverlay);
 
+		$cache.memberTrigger.click(function(e){
+			e.preventDefault();
+			$(this).next().slideToggle();
+		});
+
 		// on blog post pages, we want each post to alternate which side the image is on
 		function oddSort(){}
 
@@ -97,7 +103,7 @@
 	            var $kid2 = $pane2.detach();
 	            $kid2.prependTo(".kid3box");
 
-	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd)");
+	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");
@@ -107,7 +113,7 @@
 	            });
 	        }
 	        else {
-	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd)");
+	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");

@@ -1249,18 +1249,65 @@ p.author {
   color: white;
 }
 
-.how-to-help .tiles-about .content {
+.how-to-help .tiles-about .content, .our-team .tiles-about .content, .employment-opportunities .tiles-about .content {
   padding: 45px 5%;
 }
-.how-to-help .tiles-about .content .read-mores {
+.how-to-help .tiles-about .content .read-mores, .our-team .tiles-about .content .read-mores, .employment-opportunities .tiles-about .content .read-mores {
   color: white;
   border-color: white;
   background-color: #f05a66;
   background-image: -webkit-linear-gradient(bottom, #f05a66 50%, white 50%);
   background-image: linear-gradient(to top,#f05a66 50%, white 50%);
 }
-.how-to-help .tiles-about .content .read-mores:hover {
+.how-to-help .tiles-about .content .read-mores:hover, .our-team .tiles-about .content .read-mores:hover, .employment-opportunities .tiles-about .content .read-mores:hover {
   color: #f05a66;
+}
+
+.our-team .tiles-about .content {
+  padding-top: 75px;
+}
+
+.staff-type {
+  padding: 45px 5%;
+}
+.staff-type h2 {
+  color: #ec154f;
+  font-style: normal;
+  text-transform: uppercase;
+}
+.staff-type h2:after {
+  position: relative;
+  content: "\2193";
+  left: 25px;
+}
+.staff-type h2:hover {
+  cursor: pointer;
+}
+.staff-type .members {
+  display: none;
+}
+.staff-type .member {
+  margin: 10px 0;
+}
+.staff-type .member h3, .staff-type .member p {
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 100%;
+}
+.staff-type .member h3:last-child, .staff-type .member p:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 769px) {
+  .staff-type .member h3, .staff-type .member p {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
+  }
+  .staff-type .member h3:last-child, .staff-type .member p:last-child {
+    margin-right: 0;
+  }
 }
 
 .shared {

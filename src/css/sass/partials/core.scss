@@ -154,7 +154,7 @@
 	}
 }
 
-.how-to-help .tiles-about .content {
+.how-to-help .tiles-about .content, .our-team .tiles-about .content, .employment-opportunities .tiles-about .content {
 	padding: 45px 5%;
 	.read-mores {
 		color: white;
@@ -165,6 +165,41 @@
 		}
 	}
 }
+
+.our-team .tiles-about .content {
+	padding-top: 75px;
+}
+
+.staff-type {
+	padding: 45px 5%;
+	h2 {
+		color: $hotpink;
+		font-style: normal;
+		text-transform: uppercase;
+		&:after {
+			position: relative;
+			content: "\2193";
+			left: 25px;
+		}
+		&:hover {
+			cursor: pointer;
+		}
+	}
+	.members {
+		display: none;
+	}
+	.member {
+		margin: 10px 0;
+		h3, p {
+			@include span-columns(12);
+			@include media(769px){
+				@include span-columns(6);
+			}
+		}
+
+	}
+}
+
 
 .shared {
 	text-align: center;
