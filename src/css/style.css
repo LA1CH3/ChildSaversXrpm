@@ -575,9 +575,9 @@ p a address {
   background-image: linear-gradient(to top,transparent 50%, #ec154f 50%);
   background-size: 100% 200%;
   background-position: 300px 235px;
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -moz-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 @media screen and (min-width: 769px) {
   .read-mores, .contact .gform_wrapper .gform_footer input {
@@ -630,9 +630,9 @@ p a address {
   z-index: 20;
   top: 0;
   width: 100%;
-  -webkit-transition: background-color 1s ease-in;
-  -moz-transition: background-color 1s ease-in;
-  transition: background-color 1s ease-in;
+  -webkit-transition: background-color 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+  -moz-transition: background-color 1s cubic-bezier(0.47, 0, 0.745, 0.715);
+  transition: background-color 1s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 .header::after {
   clear: both;
@@ -1491,6 +1491,7 @@ p a address {
   clear: both;
   height: 50px;
   margin: 10px 0;
+  background-color: #e3ddd8;
 }
 .contact .gform_wrapper li#field_1_5 .gfield_radio li::after {
   clear: both;
@@ -1521,19 +1522,21 @@ p a address {
   width: 100%;
   display: block;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
-  border-radius: 3px;
+  border-radius: 3px !important;
 }
 .contact .gform_wrapper li#field_1_5 .gfield_radio li input:focus {
   border-color: #ec154f !important;
   border-width: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7) !important;
   outline: 0;
+  background-color: #e3ddd8 !important;
 }
 .contact .gform_wrapper li#field_1_5 .gfield_radio li input:checked {
   border-color: #ec154f !important;
   border-width: 3px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7) !important;
   border: 2px solid #ec154f;
+  background-color: #e3ddd8 !important;
 }
 .contact .gform_wrapper .gform_footer input {
   width: 100%;
@@ -1626,6 +1629,10 @@ p a address {
 }
 
 @-moz-document url-prefix() {
+  .checkBorder {
+    border: 3px solid #ec154f;
+  }
+
   .read-mores, .contact .gform_wrapper .gform_footer input {
     background-position: 300px 240px;
   }
@@ -1650,6 +1657,33 @@ p a address {
 
   .connect li a {
     background-position: 0 -35px;
+  }
+
+  .contact .gform_button {
+    background-position: 300px 220px !important;
+  }
+  .contact .gform_button:hover {
+    background-position: 300px 264px !important;
+  }
+  @media screen and (min-width: 769px) {
+    .contact .gform_button {
+      background-position: 300px 250px !important;
+    }
+    .contact .gform_button:hover {
+      background-position: 300px 300px !important;
+    }
+  }
+
+  .contact #field_1_5 ul li {
+    border-radius: 2px;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  }
+  .contact #field_1_5 ul li input {
+    -moz-appearance: radio !important;
+    opacity: 0;
+  }
+  .contact #field_1_5 ul li input:checked, .contact #field_1_5 ul li input:focus {
+    border: 3px solid #ec154f;
   }
 }
 

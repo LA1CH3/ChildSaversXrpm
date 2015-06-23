@@ -13,7 +13,7 @@
 	z-index: 20;
 	top: 0;
 	width: 100%;
-	@include transition(background-color 1.0s ease-in);
+	@include transition(background-color 1.0s $ease-in-sine);
 	.logo {
 		@include span-columns(8);
 		padding-top: 20px;

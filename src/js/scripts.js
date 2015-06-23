@@ -14,7 +14,7 @@
 		$cache.waypoint = $(".waypoint");
 		$cache.ajaxButton = $("#load-more");
 		$cache.memberTrigger = $(".staff-type h2");
-
+		$cache.contactRadio = $(".contact #field_1_5 ul li input");
 
 		// Init any jquery plugins here
 		// example: $(".slider").slick({....});
@@ -65,10 +65,6 @@
 			  }
 			]
 		});
-
-
-
-
 
 
 
@@ -154,6 +150,14 @@
 
 	    // give class to ajax button for styles
 	    $cache.ajaxButton.addClass("read-mores");
+
+	    // apply styles to radio button parent for firefox..ugh 
+	    $cache.contactRadio.change(function(){
+	    	$cache.contactRadio.parent().removeClass("checkBorder");
+	    	if(this.checked){
+	    		$(this).parent().addClass("checkBorder");
+	    	} 
+	    });
 
 		
 	});

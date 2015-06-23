@@ -106,7 +106,7 @@
 	@include linear-gradient(to top, rgba(0,0,0,0) 50%, $hotpink 50%);
 	background-size: 100% 200%;
 	background-position: 300px 235px;
-	@include transition(all 0.5s ease-in-out);
+	@include transition(all 0.5s $ease-in-quart);
 	@include media(769px){
 		font-size: 20px;
 		padding: 15px 45px;

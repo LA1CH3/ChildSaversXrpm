@@ -347,6 +347,7 @@
 						clear: both;
 						height: 50px;
 						margin: 10px 0;
+						background-color: $inputBg;
 						&:focus {
 								border-color: $hotpink !important;
 								border-width: 3px;
@@ -367,18 +368,20 @@
 							width: 100%;
 							display: block;
 							box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
-							border-radius: 3px;
+							border-radius: 3px !important;
 							&:focus {
 								border-color: $hotpink !important;
 								border-width: 3px;
 								box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 5px rgba($hotpink, 0.7) !important;
 								outline: 0;
+								background-color: $inputBg !important;
 							}
 							&:checked {
 								border-color: $hotpink !important;
 								border-width: 3px;
 								box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 5px rgba($hotpink, 0.7) !important;
 								border: 2px solid $hotpink;
+								background-color: $inputBg !important;
 							}
 							
 						}
@@ -484,6 +487,9 @@
 
 // Firefox specific CSS
 @-moz-document url-prefix() { 
+	.checkBorder {
+	border: 3px solid $hotpink;
+}
   .read-mores {
      background-position: 300px 240px;
      &:hover {
@@ -504,6 +510,29 @@
   }
   .connect li a {
   	background-position: 0 -35px;
+  }
+  .contact .gform_button {
+  	background-position: 300px 220px !important;
+  	&:hover {
+  		background-position: 300px 264px !important;
+  	}
+  	@include media(769px){
+		background-position: 300px 250px !important;
+  		&:hover {
+  			background-position: 300px 300px !important;
+  		}
+  	}
+  }
+  .contact #field_1_5 ul li {
+  	border-radius: 2px;
+  	box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+  	input {
+  		-moz-appearance: radio !important;
+  		opacity: 0;
+  		&:checked, &:focus {
+  			border: 3px solid $hotpink;
+  		}
+  	}
   }
 
 }
