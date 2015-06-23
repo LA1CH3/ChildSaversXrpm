@@ -347,6 +347,7 @@
 						clear: both;
 						height: 50px;
 						margin: 10px 0;
+						border-radius: 3px;
 						background-color: $inputBg;
 						&:focus {
 								border-color: $hotpink !important;
@@ -364,6 +365,7 @@
 						}
 						input {
 							@include appearance(none);
+							opacity: 0 !important;
 							background-color: $inputBg;
 							width: 100%;
 							display: block;
@@ -483,6 +485,10 @@
 	margin-bottom: 85px;
 }
 
+.checkBorder {
+	border: 3px solid $hotpink;
+}
+
 
 
 // Firefox specific CSS
@@ -528,7 +534,9 @@
   	box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
   	input {
   		-moz-appearance: radio !important;
-  		opacity: 0;
+  		appearance: radio !important;
+  		opacity: 0 !important;
+  		visibility: hidden;
   		&:checked, &:focus {
   			border: 3px solid $hotpink;
   		}

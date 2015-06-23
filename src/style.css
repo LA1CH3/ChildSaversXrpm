@@ -1530,6 +1530,7 @@ p a address {
   clear: both;
   height: 50px;
   margin: 10px 0;
+  border-radius: 3px;
   background-color: #e3ddd8;
 }
 .contact .gform_wrapper li#field_1_5 .gfield_radio li::after {
@@ -1557,6 +1558,7 @@ p a address {
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
+  opacity: 0 !important;
   background-color: #e3ddd8;
   width: 100%;
   display: block;
@@ -1666,6 +1668,10 @@ p a address {
   margin-bottom: 85px;
 }
 
+.checkBorder {
+  border: 3px solid #ec154f;
+}
+
 @-moz-document url-prefix() {
   .checkBorder {
     border: 3px solid #ec154f;
@@ -1718,7 +1724,9 @@ p a address {
   }
   .contact #field_1_5 ul li input {
     -moz-appearance: radio !important;
-    opacity: 0;
+    appearance: radio !important;
+    opacity: 0 !important;
+    visibility: hidden;
   }
   .contact #field_1_5 ul li input:checked, .contact #field_1_5 ul li input:focus {
     border: 3px solid #ec154f;
