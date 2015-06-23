@@ -458,6 +458,16 @@ p.author {
   font-family: "proxima-nova", sans-serif;
 }
 
+p a {
+  color: #ec154f;
+}
+p a:hover {
+  color: #ec154f;
+}
+p a address {
+  text-align: left;
+}
+
 /**
  * partials/utils
  * ---
@@ -581,7 +591,7 @@ p.author {
   }
 }
 
-.read-mores {
+.read-mores, .contact .gform_wrapper .gform_footer input {
   padding: 15px;
   text-transform: uppercase;
   color: #ec154f;
@@ -596,19 +606,19 @@ p.author {
   transition: all 0.5s ease-in-out;
 }
 @media screen and (min-width: 769px) {
-  .read-mores {
+  .read-mores, .contact .gform_wrapper .gform_footer input {
     font-size: 20px;
     padding: 15px 45px;
     background-position: 300px 378px;
   }
 }
-.read-mores:hover {
+.read-mores:hover, .contact .gform_wrapper .gform_footer input:hover {
   color: white;
   text-decoration: none;
   background-position: 300px 282px;
 }
 @media screen and (min-width: 769px) {
-  .read-mores:hover {
+  .read-mores:hover, .contact .gform_wrapper .gform_footer input:hover {
     background-position: 300px 432px;
   }
 }
@@ -949,7 +959,7 @@ p.author {
 .footer .footer-third h2, .footer .footer-third p {
   color: white;
 }
-.footer .footer-third .read-mores {
+.footer .footer-third .read-mores, .footer .footer-third .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .footer .footer-third input {
   color: white;
   border-color: white;
 }
@@ -1004,13 +1014,13 @@ p.author {
 .footer .connect ul li .rss {
   background-position: -218px -15px;
 }
-.footer .connect .read-mores {
+.footer .connect .read-mores, .footer .connect .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .footer .connect input {
   background-color: #ec154f;
   background-image: -webkit-linear-gradient(bottom, #ec154f 50%, white 50%);
   background-image: linear-gradient(to top,#ec154f 50%, white 50%);
   color: white;
 }
-.footer .connect .read-mores:hover {
+.footer .connect .read-mores:hover, .footer .connect .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .footer .connect input:hover {
   color: #ec154f;
 }
 .footer .copyright {
@@ -1210,7 +1220,7 @@ p.author {
   background-image: url("img/homepage-kid3.png");
 }
 
-.jumbo {
+.jumbo, .jumbo-contact #map_canvas {
   position: relative;
   background-color: black;
   background-size: cover;
@@ -1218,12 +1228,12 @@ p.author {
   min-height: 300px;
 }
 @media screen and (min-width: 769px) {
-  .jumbo {
+  .jumbo, .jumbo-contact #map_canvas {
     min-height: 500px;
   }
 }
 @media screen and (min-width: 1400px) {
-  .jumbo {
+  .jumbo, .jumbo-contact #map_canvas {
     min-height: 700px;
   }
 }
@@ -1291,14 +1301,14 @@ p.author {
 .how-to-help .tiles-about .content, .our-team .tiles-about .content, .employment-opportunities .tiles-about .content {
   padding: 45px 5%;
 }
-.how-to-help .tiles-about .content .read-mores, .our-team .tiles-about .content .read-mores, .employment-opportunities .tiles-about .content .read-mores {
+.how-to-help .tiles-about .content .read-mores, .how-to-help .tiles-about .content .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .how-to-help .tiles-about .content input, .our-team .tiles-about .content .read-mores, .our-team .tiles-about .content .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .our-team .tiles-about .content input, .employment-opportunities .tiles-about .content .read-mores, .employment-opportunities .tiles-about .content .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .employment-opportunities .tiles-about .content input {
   color: white;
   border-color: white;
   background-color: #f05a66;
   background-image: -webkit-linear-gradient(bottom, #f05a66 50%, white 50%);
   background-image: linear-gradient(to top,#f05a66 50%, white 50%);
 }
-.how-to-help .tiles-about .content .read-mores:hover, .our-team .tiles-about .content .read-mores:hover, .employment-opportunities .tiles-about .content .read-mores:hover {
+.how-to-help .tiles-about .content .read-mores:hover, .how-to-help .tiles-about .content .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .how-to-help .tiles-about .content input:hover, .our-team .tiles-about .content .read-mores:hover, .our-team .tiles-about .content .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .our-team .tiles-about .content input:hover, .employment-opportunities .tiles-about .content .read-mores:hover, .employment-opportunities .tiles-about .content .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .employment-opportunities .tiles-about .content input:hover {
   color: #f05a66;
 }
 
@@ -1356,6 +1366,232 @@ p.author {
 }
 .shared p {
   text-align: left;
+}
+
+.apply address {
+  text-align: left;
+  color: black;
+  font-style: normal;
+}
+
+.single-post-content h3 {
+  color: black;
+  font-weight: 600;
+  margin-bottom: 2em;
+}
+.single-post-content .post-nav a {
+  text-transform: uppercase;
+  color: #ec154f;
+  font-size: 150%;
+}
+.single-post-content .post-nav a:hover {
+  text-decoration: none;
+}
+.single-post-content .post-nav a[rel="prev"] {
+  float: left;
+  margin-left: 5px;
+  padding-bottom: 5px;
+  margin-bottom: 15px;
+}
+.single-post-content .post-nav a[rel="prev"]:before {
+  display: inline-block;
+  content: "<  ";
+  font-size: 155%;
+  font-weight: 600;
+  height: 45px;
+  width: 45px;
+  padding-bottom: 7px;
+  padding-right: 3px;
+  border: 2px solid #ec154f;
+  border-radius: 50px;
+  margin-right: 10px;
+  position: relative;
+  top: 5px;
+}
+.single-post-content .post-nav a[rel="next"] {
+  float: right;
+}
+.single-post-content .post-nav a[rel="next"]:after {
+  display: inline-block;
+  content: ">";
+  font-size: 155%;
+  font-weight: 600;
+  height: 45px;
+  width: 45px;
+  padding-bottom: 7px;
+  padding-left: 3px;
+  border: 2px solid #ec154f;
+  border-radius: 50px;
+  margin-left: 10px;
+  position: relative;
+  top: 5px;
+}
+
+.contact-details {
+  text-align: center;
+}
+.contact-details address {
+  font-style: normal;
+  color: black;
+  margin-bottom: 2em;
+  font-size: 115%;
+}
+.contact-details p {
+  text-align: center;
+}
+
+.contact .gform_wrapper {
+  position: relative;
+  float: left;
+  display: block;
+  margin-right: 2.3576515979%;
+  width: 100%;
+}
+.contact .gform_wrapper:last-child {
+  margin-right: 0;
+}
+@media screen and (min-width: 769px) {
+  .contact .gform_wrapper {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 57.3509785009%;
+    margin-left: 38.3841193492%;
+  }
+  .contact .gform_wrapper:last-child {
+    margin-right: 0;
+  }
+}
+.contact .gform_wrapper li label {
+  display: none;
+}
+.contact .gform_wrapper li input, .contact .gform_wrapper li textarea {
+  background-color: #e3ddd8;
+}
+.contact .gform_wrapper li input::-webkit-input-placeholder, .contact .gform_wrapper li textarea::-webkit-input-placeholder {
+  text-transform: uppercase;
+  color: black;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 110%;
+  letter-spacing: 0.5px;
+}
+.contact .gform_wrapper li input::-moz-placeholder, .contact .gform_wrapper li textarea::-moz-placeholder {
+  text-transform: uppercase;
+  color: black;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 110%;
+  letter-spacing: 0.5px;
+}
+.contact .gform_wrapper li input:-moz-placeholder, .contact .gform_wrapper li textarea:-moz-placeholder {
+  text-transform: uppercase;
+  color: black;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 110%;
+  letter-spacing: 0.5px;
+}
+.contact .gform_wrapper li input:-ms-input-placeholder, .contact .gform_wrapper li textarea:-ms-input-placeholder {
+  text-transform: uppercase;
+  color: black;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 110%;
+  letter-spacing: 0.5px;
+}
+.contact .gform_wrapper li input:focus, .contact .gform_wrapper li textarea:focus {
+  border-color: #ec154f;
+  border-width: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7);
+}
+.contact .gform_wrapper li input {
+  height: 50px;
+}
+@media screen and (min-width: 769px) {
+  .contact .gform_wrapper li#field_1_5 {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
+    position: absolute;
+    top: 0;
+    left: -60%;
+  }
+  .contact .gform_wrapper li#field_1_5:last-child {
+    margin-right: 0;
+  }
+}
+.contact .gform_wrapper li#field_1_5 label {
+  display: block;
+  margin: 15px 0;
+  font-family: "proxima-nova", sans-serif;
+  font-size: 110%;
+  font-weight: 600;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li {
+  position: relative;
+  clear: both;
+  height: 50px;
+  margin: 10px 0;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li:focus {
+  border-color: #ec154f !important;
+  border-width: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7) !important;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li label {
+  position: absolute;
+  left: 0;
+  margin-left: auto;
+  margin-right: auto;
+  right: 0;
+  top: 0px;
+  text-transform: uppercase;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  background-color: #e3ddd8;
+  width: 100%;
+  display: block;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06);
+  border-radius: 3px;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li input:focus {
+  border-color: #ec154f !important;
+  border-width: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7) !important;
+  outline: 0;
+}
+.contact .gform_wrapper li#field_1_5 .gfield_radio li input:checked {
+  border-color: #ec154f !important;
+  border-width: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.06), 0 0 5px rgba(236, 21, 79, 0.7) !important;
+  border: 2px solid #ec154f;
+}
+.contact .gform_wrapper .gform_footer input {
+  width: 100%;
+  background-position: 300px 44px;
+  margin-top: 45px;
+}
+.contact .gform_wrapper .gform_footer input:hover {
+  background-position: 300px 88px;
+}
+@media screen and (min-width: 769px) {
+  .contact .gform_wrapper .gform_footer input {
+    margin-top: initial;
+    width: initial;
+    float: right;
+    background-position: 300px 350px;
+  }
+  .contact .gform_wrapper .gform_footer input:hover {
+    background-position: 300px 400px;
+  }
 }
 
 .values-slider {
@@ -1428,17 +1664,17 @@ p.author {
 }
 
 @-moz-document url-prefix() {
-  .read-mores {
+  .read-mores, .contact .gform_wrapper .gform_footer input {
     background-position: 300px 240px;
   }
-  .read-mores:hover {
+  .read-mores:hover, .contact .gform_wrapper .gform_footer input:hover {
     background-position: 300px 288px;
   }
   @media screen and (min-width: 769px) {
-    .read-mores {
+    .read-mores, .contact .gform_wrapper .gform_footer input {
       background-position: 300px 280px;
     }
-    .read-mores:hover {
+    .read-mores:hover, .contact .gform_wrapper .gform_footer input:hover {
       background-position: 300px 336px;
     }
   }
