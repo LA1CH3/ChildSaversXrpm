@@ -105,8 +105,11 @@ function html5blank_header_scripts()
              // Waypoints
             wp_register_script('waypoints', get_template_directory_uri() . '/bower_components/waypoints/lib/jquery.waypoints.min.js', array(), '2.8.3');
 
-            // Waypoints
+            // ScrollTo
             wp_register_script('scrollto', get_template_directory_uri() . '/bower_components/jquery.scrollTo/jquery.scrollTo.min.js', array(), '2.8.3');
+
+            // fancyBox
+            wp_register_script('fancyBox', get_template_directory_uri() . '/bower_components/fancybox/source/jquery.fancybox.js', array(), '2.8.3');
 
             // Custom scripts
             wp_register_script(
@@ -117,7 +120,8 @@ function html5blank_header_scripts()
                     'modernizr',
                     'jquery',
                     'scrollto',
-                    'waypoints'),
+                    'waypoints',
+                    'fancyBox'),
                 '1.0.0');
 
             // Enqueue Scripts
@@ -150,8 +154,11 @@ function html5blank_styles()
         // normalize-css
         wp_register_style('normalize', get_template_directory_uri() . '/bower_components/normalize.css/normalize.css', array(), '3.0.1');
 
+        // fancybox
+        wp_register_style('fancycss', get_template_directory_uri() . '/bower_components/fancybox/source/jquery.fancybox.css', array(), '3.0.1');
+
         // Custom CSS
-        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize'), '1.0');
+        wp_register_style('html5blank', get_template_directory_uri() . '/style.css', array('normalize', 'fancycss'), '1.0');
 
         // Register CSS
         wp_enqueue_style('html5blank');
@@ -393,7 +400,6 @@ add_action('wp_print_scripts', 'html5blank_conditional_scripts'); // Add Conditi
 add_action('get_header', 'enable_threaded_comments'); // Enable Threaded Comments
 add_action('wp_enqueue_scripts', 'html5blank_styles'); // Add Theme Stylesheet
 add_action('init', 'register_html5_menu'); // Add HTML5 Blank Menu
-add_action('init', 'create_post_type_html5'); // Add our HTML5 Blank Custom Post Type
 add_action('widgets_init', 'my_remove_recent_comments_style'); // Remove inline Recent Comment Styles from wp_head()
 add_action('init', 'html5wp_pagination'); // Add our HTML5 Pagination
 

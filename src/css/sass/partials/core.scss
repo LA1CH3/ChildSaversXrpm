@@ -275,6 +275,70 @@
 	}
 }
 
+//single events page
+.single-events {
+	.read-mores {
+		color: white;
+		border-color: white;
+		@include linear-gradient(to top, $lightpink 50%, white 50%);
+		&:hover {
+			color: $lightpink;
+		}
+	}
+}
+
+.event-info {
+	.event-info-left, .event-info-right {
+		@include span-columns(12);
+		h3 {
+			text-align: left;
+		}
+		article {
+			margin-bottom: 45px;
+			p {
+				font-size: 100%;
+			}
+			.time:before {
+				content: url("img/icons/icon-clock.png");
+				position: relative;
+				top: 8px;
+				margin-right: 7px;
+			}
+			.location:before {
+				content: url("img/icons/icon-location.png");
+				position: relative;
+				top: 8px;
+				margin-right: 7px;
+			}
+		}
+	}
+	@include media(769px){
+		.event-info-left {
+			@include span-columns(8);
+		}
+		.event-info-right {
+			@include span-columns(3);
+			@include shift(1);
+
+		}
+	}
+}
+
+.sponsors {
+	@include clearfix;
+	.sponsor {
+		@include span-columns(12);
+		border: 2px solid $inputBg;
+		padding: 10px;
+		margin: 2.7%;
+		@include media(769px){
+			@include span-columns(3.75);
+			@include omega;
+
+		}
+	}
+}
+
 //contact page
 .jumbo-contact {
 	#map_canvas {

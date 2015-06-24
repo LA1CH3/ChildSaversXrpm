@@ -99,7 +99,7 @@
 	            var $kid2 = $pane2.detach();
 	            $kid2.prependTo(".kid3box");
 
-	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd)");
+	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");
@@ -109,7 +109,7 @@
 	            });
 	        }
 	        else {
-	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd)");
+	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");

@@ -40,7 +40,7 @@
 			<div class="row third box-content">
 				<div class="content">
 					<h2><?php the_title(); ?></h2>
-					<a class="read-mores" href="#">Learn More</a>
+					<a class="read-mores" href="<?php the_permalink(); ?>">Learn More</a>
 				</div>
 				<div class="image" id="kid1"></div>
 			</div>
@@ -53,7 +53,7 @@
 				<div class="image" id="kid1"></div>
 				<div class="content">
 					<h2><?php the_title(); ?></h2>
-					<a class="read-mores" href="#">Learn More</a>
+					<a class="read-mores" href="<?php the_permalink(); ?>">Learn More</a>
 				</div>
 			</div>
 
