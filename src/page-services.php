@@ -16,25 +16,26 @@
 	</section>
 
 	<section id="tiles">
-	<?php if(have_posts()) : while(have_posts()) : the_post(); 
+	<?php 
+	$args = array(
+		'post_type' => 'services'
+		);
+	$query = new WP_Query($args);
 
-		if(have_rows('service')) : 
-
+	?>
+	<?php if($query->have_posts()) : 
 			$i = 0;
+			while($query->have_posts()) : $query->the_post();  
 
-			while(have_rows('service')) : the_row(); 
-
-				$image = get_sub_field('image');
-				$title = get_sub_field('title');
-				$link = get_sub_field('link');
+				$image = get_field('image');
 			
 				if($i % 2 == 0){ ?>
 					
 				<div class="row third box-content">
 					<div class="image" id="kid1" style="background-image: url(<?php echo $image; ?>);"></div>
 					<div class="content">
-						<h2><?php echo $title; ?></h2>
-						<a class="read-mores" href="<?php echo $link; ?>">Read More</a>
+						<h2><?php the_title(); ?></h2>
+						<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
 					</div>
 				</div>
 				<?php $i++; ?>
@@ -43,16 +44,14 @@
 
 				<div class="row third box-content">
 					<div class="content">
-						<h2><?php echo $title; ?></h2>
-						<a class="read-mores" href="<?php echo $link; ?>">Read More</a>
+						<h2><?php the_title(); ?></h2>
+						<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
 					</div>
 					<div class="image" id="kid1" style="background-image: url(<?php echo $image; ?>);"></div>
 				</div>
 				<?php $i++; ?>
 			
 			<?php } ?>
-
-		<?php endwhile; endif; ?>
 
 	<?php endwhile; endif; wp_reset_postdata(); ?>
 	</section>

@@ -598,9 +598,9 @@ p a address {
 }
 
 .cs-button {
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -moz-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
 }
 
 .cs-header-2 {
@@ -869,9 +869,9 @@ p a address {
   top: 0;
   right: -100px;
   bottom: 0;
-  -webkit-transition: all 0.5s ease-in;
-  -moz-transition: all 0.5s ease-in;
-  transition: all 0.5s ease-in;
+  -webkit-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -moz-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   padding: 15px 15px;
   background-color: transparent;
   border: 3px solid white;
@@ -955,9 +955,9 @@ p a address {
   margin: 0 10px;
   height: 45px;
   background-image: url("img/footer-socials.png");
-  -webkit-transition: opacity 0.5s ease-in;
-  -moz-transition: opacity 0.5s ease-in;
-  transition: opacity 0.5s ease-in;
+  -webkit-transition: opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -moz-transition: opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   background-position: 0 -15px;
 }
 .footer .connect ul li a:hover {
@@ -983,6 +983,18 @@ p a address {
 }
 .footer .connect .read-mores:hover, .footer .connect .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .footer .connect input:hover {
   color: #ec154f;
+}
+.footer .calendar_wrap table {
+  background: transparent;
+  width: 250px !important;
+}
+.footer .calendar_wrap #calendar_1 {
+  width: 250px !important;
+  display: block;
+  margin: 0 auto;
+}
+.footer .calendar_wrap #calendar_1 .calbg {
+  background-color: #ec154f;
 }
 .footer .copyright {
   background-color: #3d3c3c;
@@ -1022,6 +1034,11 @@ p a address {
   .footer .copyright a {
     float: right;
   }
+}
+
+#TB_window {
+  font-family: 'proxima-nova', sans-serif !important;
+  color: black !important;
 }
 
 /**
@@ -1481,6 +1498,13 @@ p a address {
   }
 }
 
+.single-services .service-content {
+  background-color: #e3ddd8;
+}
+.single-services .third .content {
+  padding-top: 4vw;
+}
+
 .contact-details {
   text-align: center;
 }
@@ -1680,9 +1704,9 @@ p a address {
   display: inline-block;
 }
 .values-slider .slick-dots li button {
-  -webkit-transition: all 0.5s ease-in-out;
-  -moz-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
+  -webkit-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  -moz-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   padding: 0;
   width: 25px;
   height: 25px;

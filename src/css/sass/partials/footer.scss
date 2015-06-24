@@ -66,7 +66,7 @@
 
 			  button {
 			    @include position(absolute, 0 -100px 0 null);
-			    @include transition(all 0.5s ease-in);
+			    @include transition(all 0.5s $ease-in-quart);
 			    padding: 15px 15px;
 			    background-color: rgba(0,0,0,0);
 			    border: 3px solid white;
@@ -132,7 +132,7 @@
 					margin: 0 10px;
 					height: 45px;
 					background-image: url("img/footer-socials.png");
-					@include transition(opacity 0.5s ease-in);
+					@include transition(opacity 0.5s $ease-in-quart);
 					background-position: 0 -15px;
 					&:hover {
 						opacity: 0.40;
@@ -157,6 +157,21 @@
 			color: white;
 			&:hover {
 				color: $hotpink;
+			}
+		}
+	}
+
+	.calendar_wrap {
+		table {
+			background: rgba(0,0,0,0);
+			width: 250px !important;
+		}
+		#calendar_1 {
+			width: 250px !important;
+			display: block;
+			margin: 0 auto;
+			.calbg {
+				background-color: $hotpink;
 			}
 		}
 	}
@@ -192,4 +207,10 @@
 
 
 
+}
+
+// modal styling for footer calendar
+#TB_window {
+	font-family: 'proxima-nova', sans-serif !important;
+	color: black !important;
 }

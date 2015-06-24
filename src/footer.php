@@ -42,8 +42,9 @@
 						</ul>
 						<a class="read-mores" href="#">Donate</a>
 					</div>
-					<div class="footer-third box-content">
+					<div class="footer-third box-content calendar_wrap">
 						<h2>Calendar</h2>
+						<?php dynamic_sidebar( 'widget-area-2' ); ?>
 					</div>
 				</div>
 

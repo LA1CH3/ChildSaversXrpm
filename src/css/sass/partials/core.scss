@@ -339,6 +339,16 @@
 	}
 }
 
+// single service page
+.single-services {
+	.service-content {
+		background-color: $inputBg;
+	}
+	.third .content {
+		padding-top: 4vw;
+	}
+}
+
 //contact page
 .jumbo-contact {
 	#map_canvas {
@@ -503,7 +513,7 @@
 		li {
 			display: inline-block;
 			button {
-				@include transition(all 0.5s ease-in-out);
+				@include transition(all 0.5s $ease-in-quart);
 				padding: 0;
 				width: 25px;
 				height: 25px;
