@@ -785,10 +785,10 @@ p a address {
   text-align: center;
 }
 .nav-mobile ul, .nav-mobile button {
-  margin-top: 25vh;
+  margin-top: 20vh;
 }
 .nav-mobile ul li, .nav-mobile button li {
-  margin-bottom: 2em;
+  margin-bottom: 1em;
 }
 .nav-mobile ul a, .nav-mobile button a {
   color: white;
@@ -1033,7 +1033,13 @@ p a address {
   margin: 0 auto;
 }
 .footer .calendar_wrap #calendar_1 .calbg {
-  background-color: #ec154f;
+  background-color: #333;
+}
+.footer .calendar_wrap #calendar_1 .calbottom_border {
+  color: #ec154f !important;
+}
+.footer .calendar_wrap #calendar_1 .cala_day {
+  background-color: #ec154f !important;
 }
 .footer .copyright {
   background-color: #3d3c3c;
@@ -1068,6 +1074,10 @@ p a address {
 .footer .copyright a {
   margin-left: 2%;
   color: white;
+}
+.footer .copyright a:hover {
+  text-decoration: none;
+  color: #ec154f;
 }
 @media screen and (min-width: 769px) {
   .footer .copyright a {

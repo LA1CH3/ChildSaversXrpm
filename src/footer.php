@@ -50,7 +50,7 @@
 
 				<div class="copyright">
 					<div class="copy-left">
-						<span>Copyright 2015 ChildSavers. All Rights Reserved.</span>
+						<span>Copyright <?php echo date('Y'); ?> ChildSavers. All Rights Reserved.</span>
 					</div>
 					<div class="copy-right">
 						<a href="#">Privacy Policy</a>

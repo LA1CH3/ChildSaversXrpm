@@ -171,8 +171,16 @@
 			display: block;
 			margin: 0 auto;
 			.calbg {
-				background-color: $hotpink;
+				background-color: $dark-gray;
 			}
+			.calbottom_border {
+				color: $hotpink !important;
+			}
+			.cala_day {
+				background-color: $hotpink !important;
+			}
+			
+			
 		}
 	}
 
@@ -194,6 +202,10 @@
 			}
 		}
 		a {
+			&:hover {
+				text-decoration: none;
+				color: $hotpink;
+			}
 			@include media(769px){
 				float: right;
 			}
