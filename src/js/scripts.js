@@ -159,8 +159,16 @@
 	    	} 
 	    });
 
+	    // calendar hack
+	    $(".spider_calendar td").each(function(){
+	    	var color = $(this).css('border-color');
+	    	if(color == "rgb(0, 84, 120)"){
+	    		$(this).addClass("pinkBorder");
+	    	}
+	    });
+
 	    // iframe for calendar styles
-	   
+
 
 		
 	});

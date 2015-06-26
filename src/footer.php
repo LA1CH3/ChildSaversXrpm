@@ -14,7 +14,7 @@
 				</div>
 
 				<div class="row">
-					<div class="footer-third box-content">
+					<div class="footer-third box-content contact-box">
 						<h2>Contact Us</h2>
 						<address>
 							<p>200 North 22nd Street<br>
@@ -28,19 +28,19 @@
 						<h2>Connect</h2>
 						<ul>
 							<li>
-								<a class="fb" href="#"></a>
+								<a class="fb" target="_blank" href="https://www.facebook.com/ChildSaversRVA"></a>
 							</li>
 							<li>
-								<a class="twit" href="#"></a>
+								<a class="twit" target="_blank" href="https://twitter.com/childsaversrva"></a>
 							</li>
 							<li>
-								<a class="email" href="#"></a>
+								<a class="email" target="_blank" href="#"></a>
 							</li>
 							<li>
-								<a class="rss" href="#"></a>
+								<a class="rss" target="_blank" href="#"></a>
 							</li>
 						</ul>
-						<a class="read-mores" href="#">Donate</a>
+						<a class="read-mores" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate</a>
 					</div>
 					<div class="footer-third box-content calendar_wrap">
 						<h2>Calendar</h2>
@@ -54,7 +54,8 @@
 					</div>
 					<div class="copy-right">
 						<a href="#">Privacy Policy</a>
-						<a href="#">Contact Us</a>
+						<a href="<?php echo site_url('
+						/contact/'); ?>">Contact Us</a>
 					</div>
 				</div>
 

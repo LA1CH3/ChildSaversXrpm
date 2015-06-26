@@ -162,7 +162,6 @@ gulp.task( "build", [
 	"clean",
 	"template",
 	"styles",
-	"jshint",
 	"copy",
 	"uglify"
 ], function () {

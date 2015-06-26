@@ -51,7 +51,7 @@
 		background-color: red;
 	}
 	.content {
-		padding: 8vw 8vw 10vw;
+		padding: 5vw 8vw 10vw;
 		@media screen and (max-width: 768px){
 			height: auto;
 		}
@@ -92,6 +92,13 @@
 		font-weight: 600;
 		margin-bottom: 50px;
 	}
+	.read-mores {
+		@include linear-gradient(to top, $hotpink 50%, $dark-gray 50%);
+		color: white;
+		&:hover {
+			border-color: $dark-gray;
+		}
+	}
 	@include media(769px){
 		@include span-columns(7);
 	}
@@ -107,6 +114,13 @@
 	background-size: 100% 200%;
 	background-position: 300px 235px;
 	@include transition(all 0.5s $ease-in-quart);
+	&.help-link {
+		@include linear-gradient(to top, $hotpink 50%, $dark-gray 50%);
+		color: white;
+		&:hover {
+			border-color: $dark-gray;
+		}
+	}
 	@include media(769px){
 		font-size: 20px;
 		padding: 15px 45px;
@@ -131,4 +145,9 @@
 	font-style: normal;
 	text-transform: uppercase;
 	font-weight: 600;
+}
+
+.pinkBorder {
+	border-color: $hotpink !important;
+	color: $hotpink !important;
 }

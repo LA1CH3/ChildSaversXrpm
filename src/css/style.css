@@ -503,7 +503,7 @@ p a address {
   background-color: red;
 }
 .third .content {
-  padding: 8vw 8vw 10vw;
+  padding: 5vw 8vw 10vw;
 }
 @media screen and (max-width: 768px) {
   .third .content {
@@ -552,6 +552,15 @@ p a address {
   font-weight: 600;
   margin-bottom: 50px;
 }
+.spotlight .read-mores, .spotlight .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .spotlight input {
+  background-color: #ec154f;
+  background-image: -webkit-linear-gradient(bottom, #ec154f 50%, #333 50%);
+  background-image: linear-gradient(to top,#ec154f 50%, #333 50%);
+  color: white;
+}
+.spotlight .read-mores:hover, .spotlight .contact .gform_wrapper .gform_footer input:hover, .contact .gform_wrapper .gform_footer .spotlight input:hover {
+  border-color: #333;
+}
 @media screen and (min-width: 769px) {
   .spotlight {
     float: left;
@@ -578,6 +587,15 @@ p a address {
   -webkit-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   -moz-transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   transition: all 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+.read-mores.help-link, .contact .gform_wrapper .gform_footer input.help-link {
+  background-color: #ec154f;
+  background-image: -webkit-linear-gradient(bottom, #ec154f 50%, #333 50%);
+  background-image: linear-gradient(to top,#ec154f 50%, #333 50%);
+  color: white;
+}
+.read-mores.help-link:hover, .contact .gform_wrapper .gform_footer input.help-link:hover {
+  border-color: #333;
 }
 @media screen and (min-width: 769px) {
   .read-mores, .contact .gform_wrapper .gform_footer input {
@@ -610,6 +628,11 @@ p a address {
   font-weight: 600;
 }
 
+.pinkBorder {
+  border-color: #ec154f !important;
+  color: #ec154f !important;
+}
+
 /**
  * partials/wrapper
  * ---
@@ -617,6 +640,7 @@ p a address {
 .wrapper {
   margin: 0 auto;
   position: relative;
+  overflow: hidden;
 }
 
 /**
@@ -856,7 +880,7 @@ p a address {
   display: inline-block;
   margin: 0;
   position: relative;
-  width: 100%;
+  width: 105%;
   background-color: transparent;
   border: 3px solid white;
   border-radius: 10px;
@@ -891,7 +915,7 @@ p a address {
   .footer .newsletter .search-bar button {
     position: absolute;
     top: 0;
-    right: -130px;
+    right: -150px;
     bottom: 0;
     padding: 15px 30px;
   }
@@ -936,6 +960,17 @@ p a address {
   .footer .footer-third:last-child {
     margin-right: 0;
   }
+}
+.footer .contact-box {
+  padding: 35px 5%;
+  text-align: left;
+}
+.footer .contact-box h2 {
+  text-align: center;
+}
+.footer .contact-box address {
+  margin-bottom: 20px;
+  font-style: normal;
 }
 .footer .connect ul {
   list-style-type: none;
@@ -1147,9 +1182,12 @@ p a address {
   background-color: transparent;
   color: #ec154f;
   border: 3px solid #ec154f;
-  border-radius: 40px;
+  border-radius: 60px;
   font-size: 150%;
   font-weight: 300;
+  width: 75px;
+  height: 75px;
+  padding: 0;
 }
 .splash .scroll-down:focus {
   outline: 0;
@@ -1157,6 +1195,8 @@ p a address {
 @media screen and (min-width: 769px) {
   .splash .scroll-down {
     font-size: 200%;
+    width: 100px;
+    height: 100px;
   }
 }
 .splash .city {
@@ -1168,25 +1208,36 @@ p a address {
 .splash .shooting {
   position: absolute;
   top: 100px;
-  left: 50px;
+  left: -50px;
   width: 10%;
+  -webkit-animation: starLeft 10s infinite ease-in;
+  -moz-animation: starLeft 10s infinite ease-in;
+  animation: starLeft 10s infinite ease-in;
 }
 @media screen and (min-width: 769px) {
   .splash .shooting {
     top: 150px;
-    left: 100px;
+    left: -150px;
   }
 }
 .splash .shooting-right {
   position: absolute;
   top: 200px;
-  right: 50px;
+  right: -50px;
   width: 10%;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+  -webkit-animation: starRight 10s infinite ease-in 5s;
+  -moz-animation: starRight 10s infinite ease-in 5s;
+  animation: starRight 10s infinite ease-in 5s;
 }
 @media screen and (min-width: 769px) {
   .splash .shooting-right {
-    top: 250px;
-    right: 100px;
+    top: 350px;
+    right: -150px;
   }
 }
 @media screen and (min-width: 769px) {
@@ -1196,6 +1247,70 @@ p a address {
   }
 }
 
+@-webkit-keyframes starLeft {
+  from {
+    -webkit-transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(1920px, 0);
+  }
+}
+@-moz-keyframes starLeft {
+  from {
+    -moz-transform: translate(0, 0);
+  }
+  to {
+    -moz-transform: translate(1920px, 0);
+  }
+}
+@keyframes starLeft {
+  from {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(1920px, 0);
+    -moz-transform: translate(1920px, 0);
+    -ms-transform: translate(1920px, 0);
+    -o-transform: translate(1920px, 0);
+    transform: translate(1920px, 0);
+  }
+}
+@-webkit-keyframes starRight {
+  from {
+    -webkit-transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-1920px, 0);
+  }
+}
+@-moz-keyframes starRight {
+  from {
+    -moz-transform: translate(0, 0);
+  }
+  to {
+    -moz-transform: translate(-1920px, 0);
+  }
+}
+@keyframes starRight {
+  from {
+    -webkit-transform: translate(0, 0);
+    -moz-transform: translate(0, 0);
+    -ms-transform: translate(0, 0);
+    -o-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  to {
+    -webkit-transform: translate(-1920px, 0);
+    -moz-transform: translate(-1920px, 0);
+    -ms-transform: translate(-1920px, 0);
+    -o-transform: translate(-1920px, 0);
+    transform: translate(-1920px, 0);
+  }
+}
 #kid1 {
   background-image: url("img/homepage-kid1.png");
 }
@@ -1266,7 +1381,7 @@ p a address {
 
 .story {
   text-align: center;
-  padding: 50px 15%;
+  padding: 50px 20%;
 }
 .story h2 {
   color: #ec154f;
@@ -1349,11 +1464,13 @@ p a address {
 
 .shared {
   text-align: center;
-  padding: 15px 15%;
-  padding-top: 45px;
+  padding: 65px 15%;
 }
 .shared p {
   text-align: left;
+}
+.shared.sponsors {
+  padding-bottom: 10%;
 }
 
 .apply address {
@@ -1413,6 +1530,10 @@ p a address {
   margin-left: 10px;
   position: relative;
   top: 5px;
+}
+
+.events .box-content h2 {
+  margin-bottom: 85px;
 }
 
 .single-events .read-mores, .single-events .contact .gform_wrapper .gform_footer input, .contact .gform_wrapper .gform_footer .single-events input {
@@ -1616,7 +1737,7 @@ p a address {
 .contact .gform_wrapper li#field_1_5 .gfield_radio li {
   position: relative;
   clear: both;
-  height: 50px;
+  height: 60px;
   margin: 10px 0;
   border-radius: 3px;
   background-color: #e3ddd8;
@@ -1669,11 +1790,16 @@ p a address {
 }
 .contact .gform_wrapper .gform_footer input {
   width: 100%;
+  background-color: #ec154f;
+  background-image: -webkit-linear-gradient(bottom, #ec154f 50%, #333 50%);
+  background-image: linear-gradient(to top,#ec154f 50%, #333 50%);
+  color: white;
   background-position: 300px 44px;
   margin-top: 45px;
 }
 .contact .gform_wrapper .gform_footer input:hover {
   background-position: 300px 88px;
+  border-color: #333;
 }
 @media screen and (min-width: 769px) {
   .contact .gform_wrapper .gform_footer input {
@@ -1774,10 +1900,10 @@ p a address {
   }
   @media screen and (min-width: 769px) {
     .read-mores, .contact .gform_wrapper .gform_footer input {
-      background-position: 300px 280px;
+      background-position: 300px 275px;
     }
     .read-mores:hover, .contact .gform_wrapper .gform_footer input:hover {
-      background-position: 300px 336px;
+      background-position: 300px 330px;
     }
   }
 

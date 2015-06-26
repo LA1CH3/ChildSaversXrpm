@@ -20,7 +20,7 @@
 	<section>
 		<div class="jumbo jumbo-help">
 			<h2>ChildSavers' services are made possible through the financial gifts of people like you.</h2>
-			<a class="read-mores" href="#">Donate Now</a>
+			<a class="read-mores help-link" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate Now</a>
 		</div>
 	</section>
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>

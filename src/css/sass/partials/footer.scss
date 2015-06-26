@@ -54,7 +54,7 @@
 			    display: inline-block;
 			    margin: 0;
 			    position: relative;
-			    width: 100%;
+			    width: 105%;
 			    background-color: rgba(0,0,0,0);
 			    border: 3px solid white;
 			    border-radius: 10px;
@@ -80,7 +80,7 @@
 			    	color: $grey;
 			    }
 			    @include media(769px){
-			    	@include position(absolute, 0 -130px 0 null);
+			    	@include position(absolute, 0 -150px 0 null);
 			    	padding: 15px 30px;
 			    }
 
@@ -114,6 +114,18 @@
 			@include omega;
 			width: 33.3333%;
 			height: 400px;
+		}
+	}
+
+	.contact-box {
+		padding: 35px 5%;
+		text-align: left;
+		h2 {
+			text-align: center;
+		}
+		address {
+			margin-bottom: 20px;
+			font-style: normal;
 		}
 	}
 

@@ -24,14 +24,19 @@
 		background-color: rgba(0,0,0,0);
 		color: $hotpink;
 		border: 3px solid $hotpink;
-		border-radius: 40px;
+		border-radius: 60px;
 		font-size: 150%;
 		font-weight: 300;
+		width: 75px;
+		height: 75px;
+		padding: 0;
 		&:focus {
 			outline: 0;
 		}
 		@include media(769px){
 			font-size: 200%;
+			width: 100px;
+			height: 100px;
 		}
 	}
 	.city {
@@ -44,22 +49,25 @@
 	.shooting {
 		position: absolute;
 		top: 100px;
-		left: 50px;
+		left: -50px;
 		width: 10%;
+		@include animation(starLeft 10s infinite ease-in);
 		@include media(769px){
 			top: 150px;
-			left: 100px;
+			left: -150px;
 		}
 	}
 
 	.shooting-right {
 		position: absolute;
 		top: 200px;
-		right: 50px;
+		right: -50px;
 		width: 10%;
+		@include transform(rotate(90deg));
+		@include animation(starRight 10s infinite ease-in 5s);
 		@include media(769px){
-			top: 250px;
-			right: 100px;
+			top: 350px;
+			right: -150px;
 		}
 
 	}
@@ -67,6 +75,25 @@
 	@include media(769px){
 		min-height: 850px;
 		padding: 0 15%;
+	}
+}
+
+// star animations
+@include keyframes(starLeft){
+	from {
+		@include transform(translate(0,0));
+	}
+	to {
+		@include transform(translate(1920px,0));
+	}
+}
+
+@include keyframes(starRight){
+	from {
+		@include transform(translate(0,0));
+	}
+	to {
+		@include transform(translate(-1920px, 0));
 	}
 }
 
@@ -135,7 +162,7 @@
 
 .story {
 	text-align: center;
-	padding: 50px 15%;
+	padding: 50px 20%;
 	h2 {
 		color: $hotpink;
 		font-style: normal;
@@ -204,10 +231,12 @@
 
 .shared {
 	text-align: center;
-	padding: 15px 15%;
-	padding-top: 45px;
+	padding: 65px 15%;
 	p {
 		text-align: left;
+	}
+	&.sponsors {
+		padding-bottom: 10%;
 	}
 }
 
@@ -273,6 +302,11 @@
 			}
 		}
 	}
+}
+
+// events landing page
+.events .box-content h2 {
+	margin-bottom: 85px;
 }
 
 //single events page
@@ -419,7 +453,7 @@
 						@include clearfix;
 						position: relative;
 						clear: both;
-						height: 50px;
+						height: 60px;
 						margin: 10px 0;
 						border-radius: 3px;
 						background-color: $inputBg;
@@ -469,9 +503,12 @@
 			input {
 				width: 100%;
 				@extend .read-mores;
+				@include linear-gradient(to top, $hotpink 50%, $dark-gray 50%);
+				color: white;
 				background-position: 300px 44px; 
 				&:hover {
 					background-position: 300px 88px;
+					border-color: $dark-gray;
 				}
 				margin-top: 45px;
 				@include media(769px){
@@ -563,6 +600,9 @@
 	border: 3px solid $hotpink;
 }
 
+// Animation related styles
+
+
 
 
 // Firefox specific CSS
@@ -576,9 +616,9 @@
      	background-position: 300px 288px;
      }
      @include media(769px){
-     	background-position: 300px 280px;
+     	background-position: 300px 275px;
      	&:hover {
-     		background-position: 300px 336px;
+     		background-position: 300px 330px;
      	}
      }
   }
