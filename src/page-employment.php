@@ -15,9 +15,12 @@
 			<div class="jumbo jumbo-about">
 	 			<h1>Employment Opportunities</h1>
 	 			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
+	 			<button class="scroll-jumbo">
+				<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
+			</button>
 	 		</div>
 	</section>
-	<section class="shared">
+	<section data-scroll class="shared">
 		<h2 class="cs-header-2">Grow with us!</h2>
 		<p>Located in a historic building at the top of Church Hill overlooking Shockoe Bottom, ChildSavers is proudly celebrating its 90th year serving children and families of Richmond with our diverse workforce.</p>
 		<p>We believe all children have the right to be safe, healthy, happy, and ready to learn. We provide trauma response, mental health counseling and early childhood development services so that children have a chance to reach their potential and thrive.</p>

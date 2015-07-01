@@ -111,6 +111,9 @@ function html5blank_header_scripts()
             // fancyBox
             wp_register_script('fancyBox', get_template_directory_uri() . '/bower_components/fancybox/source/jquery.fancybox.js', array(), '2.8.3');
 
+            // throttle/debounce
+            wp_register_script('throttle', get_template_directory_uri() . '/bower_components/throttle-debounce/dist/throttle-debounce.min.js', array(), '2.8.3');
+
             // Custom scripts
             wp_register_script(
                 'html5blankscripts',
@@ -121,7 +124,8 @@ function html5blank_header_scripts()
                     'jquery',
                     'scrollto',
                     'waypoints',
-                    'fancyBox'),
+                    'fancyBox',
+                    'throttle'),
                 '1.0.0');
 
             // Enqueue Scripts
@@ -434,26 +438,10 @@ add_filter('image_send_to_editor', 'remove_width_attribute', 10 ); // Remove wid
 // Remove Filters
 remove_filter('the_excerpt', 'wpautop'); // Remove <p> tags from Excerpt altogether
 
-// Shortcodes
-add_shortcode('html5_shortcode_demo', 'html5_shortcode_demo'); // You can place [html5_shortcode_demo] in Pages, Posts now.
-add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [html5_shortcode_demo_2] in Pages, Posts now.
-
-// Shortcodes above would be nested like this -
-// [html5_shortcode_demo] [html5_shortcode_demo_2] Here's the page title! [/html5_shortcode_demo_2] [/html5_shortcode_demo]
-
-
-/*------------------------------------*\
-    ShortCode Functions
-\*------------------------------------*/
-
-// Shortcode Demo with Nested Capability
-function html5_shortcode_demo($atts, $content = null)
-{
-    return '<div class="shortcode-demo">' . do_shortcode($content) . '</div>'; // do_shortcode allows for nested Shortcodes
+////////////////////////// Random stuff
+function serviceQuery($query){
+    if($query->is_main_query() && $query->is_tax()){
+        $query->set('post_type', 'services');
+    }
 }
-
-// Shortcode Demo with simple <h2> tag
-function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 shortcode, allows for nesting within above element. Fully expandable.
-{
-    return '<h2>' . $content . '</h2>';
-}
+add_action('pre_get_posts', 'serviceQuery');

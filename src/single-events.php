@@ -22,7 +22,7 @@
 	 			<div id="map_canvas"></div>
 	 		</div>
 	</section>
-	<section class="shared event-info">
+	<section class="shared event-info" data-scroll>
 		<h2 class="cs-header-2"><?php the_title(); ?></h2>
 		<div class="event-info-left">
 			<?php the_content(); ?>
@@ -123,47 +123,26 @@
       init: function () {
         map.set('styles', [
     {
-        "featureType": "all",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#f05a66"
-            }
-        ]
-    },
-    {
-        "featureType": "all",
+        "featureType": "administrative",
         "elementType": "labels.text.fill",
         "stylers": [
             {
-                "gamma": 0.01
-            },
-            {
-                "lightness": 20
+                "color": "#444444"
             }
         ]
     },
     {
-        "featureType": "all",
-        "elementType": "labels.text.stroke",
+        "featureType": "landscape",
+        "elementType": "all",
         "stylers": [
             {
-                "saturation": -31
-            },
-            {
-                "lightness": -33
-            },
-            {
-                "weight": 2
-            },
-            {
-                "gamma": 0.8
+                "color": "#f38383"
             }
         ]
     },
     {
-        "featureType": "all",
-        "elementType": "labels.icon",
+        "featureType": "poi",
+        "elementType": "all",
         "stylers": [
             {
                 "visibility": "off"
@@ -171,47 +150,23 @@
         ]
     },
     {
-        "featureType": "landscape",
-        "elementType": "geometry",
+        "featureType": "road",
+        "elementType": "all",
         "stylers": [
             {
-                "lightness": 30
+                "saturation": -100
             },
             {
-                "saturation": 30
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "saturation": 20
-            }
-        ]
-    },
-    {
-        "featureType": "poi.park",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "lightness": 20
-            },
-            {
-                "saturation": -20
+                "lightness": 45
             }
         ]
     },
     {
         "featureType": "road",
-        "elementType": "geometry",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "lightness": 10
-            },
-            {
-                "saturation": -30
+                "color": "#f7aaa6"
             }
         ]
     },
@@ -220,10 +175,52 @@
         "elementType": "geometry.stroke",
         "stylers": [
             {
-                "saturation": 25
-            },
+                "color": "#fbd3cd"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
             {
-                "lightness": 25
+                "color": "#514f4f"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#fbd3cd"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "simplified"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "all",
+        "stylers": [
+            {
+                "visibility": "off"
             }
         ]
     },
@@ -232,7 +229,10 @@
         "elementType": "all",
         "stylers": [
             {
-                "lightness": -20
+                "color": "#f05a66"
+            },
+            {
+                "visibility": "on"
             }
         ]
     }

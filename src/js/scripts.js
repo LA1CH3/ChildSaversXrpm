@@ -15,6 +15,8 @@
 		$cache.ajaxButton = $("#load-more");
 		$cache.memberTrigger = $(".staff-type h2");
 		$cache.contactRadio = $(".contact #field_1_5 ul li input");
+		$cache.desktopnavItem = $(".nav-desktop .menu-item");
+		$cache.scrollJumbo = $(".jumbo .scroll-jumbo");
 
 		// Init any jquery plugins here
 		// example: $(".slider").slick({....});
@@ -23,13 +25,25 @@
 		var waypoints = $cache.waypoint.waypoint({
 			handler: function(direction){
 				$(".header").toggleClass("white");
-			}
+			},
+			offset: '-10px'
 		});
 
 		// window scrolling - jquery.scrollTo
 		$cache.scrollButton.click(function(e){
 			e.preventDefault();
-			$.scrollTo($("#tiles"), 800);
+			$.scrollTo($("#tiles"), {
+				duration: 800,
+				offset: -115
+			});
+		});
+
+		$cache.scrollJumbo.click(function(e){
+			e.preventDefault() ;
+			$.scrollTo($("section[data-scroll]"), {
+				duration: 800,
+				offset: -100
+			});
 		});
 
 		// slider init - slick.js
@@ -38,6 +52,7 @@
 			slidesToShow: 3,
 			slidesToScroll: 3,
 			dots: true,
+			arrows: true,
 			adaptiveHeight: true,
 			responsive: [
 			    {
@@ -79,27 +94,41 @@
 			});
 		}
 
+		function hoverAppear($trigger){
+			$trigger.hover(
+				function(e){
+					e.preventDefault();
+					var $item = $(this).find(".sub-menu");
+					$item.stop().slideDown();
+				}, function(e){
+					var $item = $(this).find(".sub-menu");
+					$item.stop().slideUp();
+				} );
+		}
+
 		clickAppear($cache.mobileExit, $cache.mobileOverlay);
 		clickAppear($cache.mobileShow, $cache.mobileOverlay);
 
-		$cache.memberTrigger.click(function(e){
-			e.preventDefault();
-			$(this).next().slideToggle();
-		});
+		// debounce that mofo
+		hoverAppear($cache.desktopnavItem);
 
-		// on blog post pages, we want each post to alternate which side the image is on
-		function oddSort(){}
-
+		// running functions dependent on window size
+		// handles onload and resize
 		function checkWidth() {
 	        var windowsize = $(window).width();
 	        if (windowsize > 768) {
+
+	        	$(".slick-slider button").html("");
+	    $(".slick-prev").html('<img src="http://childsavers.rpmdevserver.com/wp-content/themes/html5blank/src/img/arrow1.png" alt="next">');
+	    $(".slick-next").html('<img src="http://childsavers.rpmdevserver.com/wp-content/themes/html5blank/src/img/arrow2.png" alt="previous">');
+
 	            var $kid = $pane.detach();
 	            $kid.appendTo(".kid2box");
 
 	            var $kid2 = $pane2.detach();
 	            $kid2.prependTo(".kid3box");
 
-	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd), .single-services .box-content:nth-child(odd)");
+	            $cache.oddPosts = $(".blog .box-content:nth-child(odd), .tax-service-type .box-content:nth-child(even), .how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd), .single-services .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");
@@ -109,7 +138,7 @@
 	            });
 	        }
 	        else {
-	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .services .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd), .single-services .box-content:nth-child(odd)");
+	        	$cache.oddPosts = $(".blog .box-content:nth-child(odd), .tax-service-type .box-content:nth-child(even),.how-to-help .box-content:nth-child(odd), .events .box-content:nth-child(odd), .our-team .box-content:nth-child(odd), .employment-opportunities .box-content:nth-child(odd), .single-events .box-content:nth-child(odd), .single-services .box-content:nth-child(odd)");
 
 	            $cache.oddPosts.each(function(){
 	            	var $image = $(this).find(".image");
@@ -117,6 +146,9 @@
 	            	$newimg.prependTo($(this));
 
 	            });
+
+	            $(".slick-prev").html("< ");
+	    		$(".slick-next").html(" >");
 
 	        	var $kid = $pane.detach();
 	        	$kid.prependTo(".kid2box");
@@ -141,15 +173,22 @@
 	    	$(window).resize(checkWidth);	
 	    };
 
-
-
-	    // All other needs can go here
+	    ////////// All other needs can go here
 
 	    // removing slick dots inner content - we do it on resize too
-	    $(".slick-dots button").html("");
+	    $(".slick-slider button").html("");
+	    $(".slick-prev").html('<img src="http://childsavers.rpmdevserver.com/wp-content/themes/html5blank/src/img/arrow1.png" alt="next">');
+	    $(".slick-next").html('<img src="http://childsavers.rpmdevserver.com/wp-content/themes/html5blank/src/img/arrow2.png" alt="previous">');
+
 
 	    // give class to ajax button for styles
 	    $cache.ajaxButton.addClass("read-mores");
+
+	    // our team page
+		$cache.memberTrigger.click(function(e){
+			e.preventDefault();
+			$(this).next().slideToggle();
+		});
 
 	    // apply styles to radio button parent for firefox..ugh 
 	    $cache.contactRadio.change(function(){
@@ -166,10 +205,6 @@
 	    		$(this).addClass("pinkBorder");
 	    	}
 	    });
-
-	    // iframe for calendar styles
-
-
 		
 	});
 

@@ -42,13 +42,22 @@ div, section {
 a {
   color: $text-color;
   text-decoration: none;
+  letter-spacing: 1px !important;
 
   &:focus,
   &:hover {
     text-decoration: underline;
   }
+  &:visited {
+    text-decoration: none;
+  }
+  &:active {
+    color: $hotpink;
+    text-decoration: none;
+  }
 
   &:active {}
+
 }
 
 input[type="text"],
@@ -122,13 +131,17 @@ h1, h2, h3, p {
     font-size: 1.6em;
     font-style: italic;
     font-weight: 400;
-    line-height: 1.8em;
+    line-height: 1.4em;
     margin-bottom: 1.1em;
 
     @include media(769px) {
-      font-size: 2.4em;
+      font-size: 2em;
       letter-spacing: 1px;
     }
+  }
+
+  .tax-service-type #tiles h2 {
+    margin-bottom: 4em;
   }
 
   code {

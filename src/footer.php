@@ -34,10 +34,10 @@
 								<a class="twit" target="_blank" href="https://twitter.com/childsaversrva"></a>
 							</li>
 							<li>
-								<a class="email" target="_blank" href="#"></a>
+								<a class="email" target="_blank" href="mailto:info@childsavers.org"></a>
 							</li>
 							<li>
-								<a class="rss" target="_blank" href="#"></a>
+								<a class="rss" target="_blank" href="<?php bloginfo('atom_url'); ?>"></a>
 							</li>
 						</ul>
 						<a class="read-mores" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate</a>
@@ -55,7 +55,7 @@
 					<div class="copy-right">
 						<a href="#">Privacy Policy</a>
 						<a href="<?php echo site_url('
-						/contact/'); ?>">Contact Us</a>
+						contact/'); ?>">Contact Us</a>
 					</div>
 				</div>
 
@@ -67,15 +67,6 @@
 
 		<?php wp_footer(); ?>
 
-		<!-- analytics -->
-		<script>
-		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
-		(f[s].q=f[s].q||[]).push(arguments)},f[s].l=1*new Date();h=i.createElement(r),
-		l=i.getElementsByTagName(r)[0];h.async=1;h.src=e;l.parentNode.insertBefore(h,l)
-		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
-		ga('send', 'pageview');
-		</script>
 		<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.min.js"></script>
 
 	</body>

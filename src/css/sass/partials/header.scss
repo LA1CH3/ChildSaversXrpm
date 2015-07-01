@@ -22,7 +22,7 @@
 			max-width: 275px;
 		}
 		@include media(769px){
-			@include span-columns(4);	
+			@include span-columns(3.5);	
 		}
 	}
 	.nav-mobile-button-wrap {
@@ -102,6 +102,10 @@
 		margin-top: 20vh;
 		li {
 			margin-bottom: 1em;
+			.sub-menu {
+				margin-top: 0;
+				font-size: 50%;
+			}
 		}
 		a {
 			color: white;
@@ -124,7 +128,7 @@
 	display: none;
 	@include media(769px){
 		display: block;
-		@include span-columns(8);
+		@include span-columns(8.5);
 		@include omega;
 		padding-top: 35px;
 		text-align: right;
@@ -132,13 +136,57 @@
 			display: inline-block;
 			text-transform: uppercase;
 			margin-left: 2vw;
+			position: relative;
+			&.current_page_item {
+				& > a {
+					color: $hotpink !important;
+				}
+			}
 			a {
 				&:hover {
 					color: $hotpink;
 					text-decoration: none;
 				}
 			}
+			.sub-menu {
+				display: none;
+				position: absolute;
+				left: 0;
+				margin-top: 10px;
+				text-align: left;
+				width: 280%;
+				background-color: $lightpink;
+				padding: 15px;
+				&:before {
+					content: "";
+					@include triangle(25px, $lightpink, up);
+					position: absolute;
+					top: -10px;
+				}
+				li {
+					margin-left: 0;
+					margin-top: 5px;
+					display: block;
+					a {
+						color: white;
+						&:active {
+							color: white;
+						}
+						&:before {
+							content: "+ ";
+						}
+					}
+				}
+			}
 		}
 	}
 
+}
+
+// no fading on certain pages,
+
+.page:not(.home), .contact, .single {
+	header {
+		background-color: white !important;
+	}
 }

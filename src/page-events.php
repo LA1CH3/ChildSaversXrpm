@@ -15,10 +15,13 @@
 		<div class="jumbo jumbo-about">
  			<h1>Events</h1>
  			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
+ 			<button class="scroll-jumbo">
+				<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
+			</button>
  		</div>
 	</section>
 
-	<section id="tiles">
+	<section id="tiles" data-scroll>
 
 	<?php
 

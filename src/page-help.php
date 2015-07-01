@@ -15,9 +15,12 @@
 		<div class="jumbo jumbo-about">
  			<h1>How To Help</h1>
  			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
+ 			<button class="scroll-jumbo">
+				<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
+			</button>
  		</div>
 	</section>
-	<section>
+	<section data-scroll>
 		<div class="jumbo jumbo-help">
 			<h2>ChildSavers' services are made possible through the financial gifts of people like you.</h2>
 			<a class="read-mores help-link" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate Now</a>

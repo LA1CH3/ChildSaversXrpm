@@ -2,12 +2,16 @@
 
 .splash {
 	position: relative;
-	min-height: 600px;
+	min-height: 400px;
 	height: 100vh;
 	text-align: center;
 	background-color: $lightblue;
 	padding: 0 10%;
-	h1, button {
+	@include media(769px){
+		min-height: 100vh;
+		padding: 0 15%;
+	}
+	h1 {
 		position: relative;
 		top: 175px;
 		z-index: 10;
@@ -18,9 +22,9 @@
 		color: $hotpink;
 	}
 	.scroll-down {
-		position: relative;
+		position: absolute;
 		z-index: 10;
-		top: 250px;
+		bottom: 40px;
 		background-color: rgba(0,0,0,0);
 		color: $hotpink;
 		border: 3px solid $hotpink;
@@ -30,6 +34,10 @@
 		width: 75px;
 		height: 75px;
 		padding: 0;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
 		&:focus {
 			outline: 0;
 		}
@@ -48,33 +56,34 @@
 
 	.shooting {
 		position: absolute;
-		top: 100px;
+		top: 200px;
 		left: -50px;
 		width: 10%;
 		@include animation(starLeft 10s infinite ease-in);
 		@include media(769px){
-			top: 150px;
+			top: 250px;
 			left: -150px;
 		}
 	}
 
 	.shooting-right {
 		position: absolute;
-		top: 200px;
+		top: 100px;
 		right: -50px;
 		width: 10%;
 		@include transform(rotate(90deg));
-		@include animation(starRight 10s infinite ease-in 5s);
+		@include animation(starRight 10s infinite ease-in 8s);
 		@include media(769px){
-			top: 350px;
+			top: 250px;
 			right: -150px;
 		}
 
 	}
 
-	@include media(769px){
-		min-height: 850px;
-		padding: 0 15%;
+	.shooting-bottom {
+		@extend .shooting-right;
+		top: 500px;
+		@include animation(starBottom 10s infinite ease-in 14s);
 	}
 }
 
@@ -84,7 +93,7 @@
 		@include transform(translate(0,0));
 	}
 	to {
-		@include transform(translate(1920px,0));
+		@include transform(translate(1920px,-400px));
 	}
 }
 
@@ -93,7 +102,16 @@
 		@include transform(translate(0,0));
 	}
 	to {
-		@include transform(translate(-1920px, 0));
+		@include transform(translate(-1920px, 300px));
+	}
+}
+
+@include keyframes(starBottom){
+	from {
+		@include transform(translate(0,0));
+	}
+	to {
+		@include transform(translate(-1920px, -600px));
 	}
 }
 
@@ -118,7 +136,27 @@
 		min-height: 500px;
 	}
 	@include media(1400px){
+		min-height: 600px;
+	}
+	@include media(1800px){
 		min-height: 700px;
+	}
+	.scroll-jumbo {
+		background-color: rgba(0,0,0,0);
+		position: absolute;
+		margin-left: auto;
+		margin-right: auto;
+		left: 0;
+		right: 0;
+		bottom: 35px;
+		width: 50px;
+		height: 50px;
+		border: 3px solid $hotpink;
+		border-radius: 60px;
+		@include media(769px){
+			width: 75px;
+			height: 75px;
+		}
 	}
 }
 
@@ -154,7 +192,10 @@
 		color: black;
 		font-weight: 700;
 		@include media(769px){
-			padding-top: 100px;
+			padding-top: 190px;
+		}
+		@include media(1280px){
+			padding-top: 200px;
 		}
 	}
 }
@@ -183,7 +224,10 @@
 }
 
 .how-to-help .tiles-about .content, .our-team .tiles-about .content, .employment-opportunities .tiles-about .content {
-	padding: 45px 5%;
+	padding: 85px 5%;
+	@include media(1280px){
+		padding: 110px 5%;
+	}
 	.read-mores {
 		color: white;
 		border-color: white;
@@ -194,19 +238,22 @@
 	}
 }
 
-.our-team .tiles-about .content {
-	padding-top: 75px;
+.our-team .tiles-about .content, .employment-opportunities .tiles-about .content {
+	padding-top: 40px;
+	@include media(769px){
+		padding-top: 110px;
+	}
 }
 
 .staff-type {
-	padding: 45px 5%;
+	padding: 35px 5%;
 	h2 {
 		color: $hotpink;
 		font-style: normal;
 		text-transform: uppercase;
 		&:after {
 			position: relative;
-			content: "\2193";
+			content: url(img/arrow_home.svg);
 			left: 25px;
 		}
 		&:hover {
@@ -232,6 +279,15 @@
 .shared {
 	text-align: center;
 	padding: 65px 15%;
+	&.contact-details {
+		padding-bottom: 15px;
+		address, p {
+			font-size: 155%;
+		}
+	}
+	&.contact-form {
+		padding-top: 15px;
+	}
 	p {
 		text-align: left;
 	}
@@ -244,6 +300,7 @@
 	text-align: left;
 	color: black;
 	font-style: normal;
+	font-size: 120%;
 }
 
 // single post page
@@ -268,13 +325,14 @@
 				margin-bottom: 15px;
 				&:before {
 					display: inline-block;
-					content: "<  ";
+					content: url("img/arrow1.png");
 					font-size: 155%;
 					font-weight: 600;
-					height: 45px;
-					width: 45px;
+					height: 55px;
+					width: 55px;
 					padding-bottom: 7px;
 					padding-right: 3px;
+					padding-top: 7px;
 					border: 2px solid $hotpink;
 					border-radius: 50px;
 					margin-right: 10px;
@@ -286,11 +344,12 @@
 				float: right;
 				&:after {
 					display: inline-block;
-					content: ">";
+					content: url("img/arrow2.png");
 					font-size: 155%;
 					font-weight: 600;
-					height: 45px;
-					width: 45px;
+					height: 55px;
+					width: 55px;
+					padding-top: 7px;
 					padding-bottom: 7px;
 					padding-left: 3px;
 					border: 2px solid $hotpink;
@@ -305,12 +364,18 @@
 }
 
 // events landing page
-.events .box-content h2 {
+.events #tiles .box-content h2 {
 	margin-bottom: 85px;
 }
 
 //single events page
 .single-events {
+	.content {
+		padding-top: 10vw;
+		h2 {
+			margin-bottom: 2em;
+		}
+	}
 	.read-mores {
 		color: white;
 		border-color: white;
@@ -379,7 +444,7 @@
 		background-color: $inputBg;
 	}
 	.third .content {
-		padding-top: 4vw;
+		padding-top: 7vw;
 	}
 }
 
@@ -422,13 +487,13 @@
 					text-transform: uppercase;
 					color: black;
 					font-family: $sans-serif;
-					font-size: 110%;
+					font-size: 125%;
 					letter-spacing:0.5px;
 				}
 				&:focus {
 					border-color: $hotpink;
 					border-width: 3px;
-					box-shadow: inset 0 1px 3px rgba(0,0,0, 0.06), 0 0 5px rgba($hotpink, 0.7);
+					box-shadow: none !important;
 				}
 			}
 			input {
@@ -445,7 +510,7 @@
 					display: block;
 					margin: 15px 0;
 					font-family: $sans-serif;
-					font-size: 110%;
+					font-size: 125%;
 					font-weight: 600;
 				}
 				.gfield_radio {
@@ -544,7 +609,17 @@
 		color: black;
 	}
 	.slick-prev, .slick-next {
-		display: none !important;
+		position: absolute;
+		bottom: 50%;
+		background-color: rgba(0,0,0,0);
+		color: $hotpink;
+		border-radius: 30px;
+	}
+	.slick-prev {
+		left: -50px;
+	}
+	.slick-next {
+		right: -50px;
 	}
 	.slick-dots {
 		li {

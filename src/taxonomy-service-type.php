@@ -1,16 +1,17 @@
-<?php
-
-/* Template Name: Services */
-
- ?>
-
  <?php get_header(); ?>
+
+ <?php
+global $wp_query;
+$term = $wp_query->get_queried_object();
+$title = $term->name;
+
+  ?>
 
  <main role="main">
 	
 	<section class="waypoint">
 		<div class="jumbo jumbo-about">
- 			<h1>For Professionals</h1>
+ 			<h1><?php echo $title;  ?></h1>
  			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
  			<button class="scroll-jumbo">
 				<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
@@ -19,16 +20,9 @@
 	</section>
 
 	<section id="tiles" data-scroll>
-	<?php 
-	$args = array(
-		'post_type' => 'services'
-		);
-	$query = new WP_Query($args);
-
-	?>
-	<?php if($query->have_posts()) : 
+	<?php if(have_posts()) : 
 			$i = 0;
-			while($query->have_posts()) : $query->the_post();  
+			while(have_posts()) : the_post();  
 
 				$image = get_field('image');
 			

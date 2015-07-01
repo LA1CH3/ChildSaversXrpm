@@ -17,7 +17,7 @@
 	 		</div>
 	</section>
 
-	<section class="shared contact-details">
+	<section data-scroll class="shared contact-details">
 		<h2 class="cs-header-2">Contact Details</h2>
 		<address>
 			ChildSavers<br>
@@ -94,7 +94,7 @@
         "elementType": "all",
         "stylers": [
             {
-                "color": "#f2f2f2"
+                "color": "#f38383"
             }
         ]
     },
@@ -116,6 +116,42 @@
             },
             {
                 "lightness": 45
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#f7aaa6"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#fbd3cd"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#514f4f"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#fbd3cd"
             }
         ]
     },
