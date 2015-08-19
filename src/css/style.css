@@ -360,7 +360,7 @@ h1 {
 }
 @media screen and (min-width: 769px) {
   h1 {
-    font-size: 4.8em;
+    font-size: 4.4em;
     letter-spacing: 1px;
   }
 }
@@ -737,6 +737,10 @@ p a address {
   }
 }
 
+.fa-search {
+  font-size: 135%;
+}
+
 .hamburger {
   position: absolute;
   top: 75%;
@@ -870,6 +874,11 @@ p a address {
     border-right: 12.5px solid transparent;
     position: absolute;
     top: -10px;
+  }
+  .nav-desktop li .sub-menu .sub-menu {
+    left: 250px;
+    width: 100%;
+    display: block;
   }
   .nav-desktop li .sub-menu li {
     margin-left: 0;
@@ -1263,7 +1272,7 @@ p a address {
 .splash .scroll-down {
   position: absolute;
   z-index: 10;
-  bottom: 40px;
+  bottom: 15vh;
   background-color: transparent;
   color: #ec154f;
   border: 3px solid #ec154f;
@@ -1461,11 +1470,6 @@ p a address {
     min-height: 600px;
   }
 }
-@media screen and (min-width: 1800px) {
-  .jumbo, .jumbo-contact #map_canvas {
-    min-height: 700px;
-  }
-}
 .jumbo .scroll-jumbo, .jumbo-contact #map_canvas .scroll-jumbo {
   background-color: transparent;
   position: absolute;
@@ -1649,6 +1653,10 @@ p a address {
   font-size: 120%;
 }
 
+.page-template-default .single-post-content {
+  padding-top: 145px;
+}
+
 .single-post-content h3 {
   color: black;
   font-weight: 600;
@@ -1670,38 +1678,42 @@ p a address {
 }
 .single-post-content .post-nav a[rel="prev"]:before {
   display: inline-block;
-  content: url("img/arrow1.png");
+  background-image: url("img/arrow1.png");
+  background-position: 13px;
+  background-size: 34%;
+  background-repeat: no-repeat;
+  content: "";
   font-size: 155%;
   font-weight: 600;
-  height: 55px;
-  width: 55px;
-  padding-bottom: 7px;
-  padding-right: 3px;
+  height: 45px;
+  width: 45px;
   padding-top: 7px;
   border: 2px solid #ec154f;
   border-radius: 50px;
   margin-right: 10px;
   position: relative;
-  top: 5px;
+  top: 14px;
 }
 .single-post-content .post-nav a[rel="next"] {
   float: right;
 }
 .single-post-content .post-nav a[rel="next"]:after {
   display: inline-block;
-  content: url("img/arrow2.png");
+  background-image: url("img/arrow2.png");
+  background-position: 13px;
+  background-size: 34%;
+  background-repeat: no-repeat;
+  content: "";
   font-size: 155%;
   font-weight: 600;
-  height: 55px;
-  width: 55px;
+  height: 45px;
+  width: 45px;
   padding-top: 7px;
-  padding-bottom: 7px;
-  padding-left: 3px;
   border: 2px solid #ec154f;
   border-radius: 50px;
   margin-left: 10px;
   position: relative;
-  top: 5px;
+  top: 14px;
 }
 
 .events #tiles .box-content h2 {
@@ -2067,10 +2079,9 @@ p a address {
   padding: 65px 10%;
 }
 
-.services .box-content h2 {
-  margin-bottom: 85px;
-}
-
+/*.services .box-content h2 {
+	margin-bottom: 85px;
+}*/
 .checkBorder {
   border: 3px solid #ec154f;
 }
@@ -2134,6 +2145,75 @@ p a address {
   .contact #field_1_5 ul li input:checked, .contact #field_1_5 ul li input:focus {
     border: 3px solid #ec154f;
   }
+}
+.search-overlay {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: 21;
+  background-color: rgba(236, 21, 79, 0.9);
+  padding-top: 30vh;
+  padding-left: 20vw;
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .search-overlay {
+    padding-top: 42vh;
+    padding-left: 34vw;
+  }
+}
+.search-overlay .cs-search {
+  width: 35%;
+  display: inline-block;
+  min-width: 200px;
+  background-color: transparent;
+  color: white;
+  padding: 2% 1%;
+  font-size: 125%;
+}
+.search-overlay .cs-search:focus {
+  border-color: white;
+}
+.search-overlay .cs-search::-webkit-input-placeholder {
+  color: white;
+}
+.search-overlay .cs-search::-moz-placeholder {
+  color: white;
+}
+.search-overlay .cs-search:-moz-placeholder {
+  color: white;
+}
+.search-overlay .cs-search:-ms-input-placeholder {
+  color: white;
+}
+.search-overlay .cs-submit {
+  display: inline-block;
+  background-color: transparent;
+  border: 1px solid white;
+  background-image: none;
+  position: relative;
+  bottom: 3px;
+  padding: 2.55% 1%;
+  width: 15%;
+  min-width: 150px;
+}
+.search-overlay .cs-submit:hover {
+  background-color: white;
+  color: #ec154f;
+}
+.search-overlay .cs-search-exit {
+  position: absolute;
+  color: white;
+  border: 1px solid white;
+  background-image: none;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 82;
+  max-width: 200px;
+  text-align: center;
 }
 
 /*# sourceMappingURL=style.css.map */

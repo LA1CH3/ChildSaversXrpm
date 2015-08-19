@@ -1,19 +1,58 @@
-<?php get_header(); ?>
+ <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+ <main role="main" class="blog">
 
-			<h1><?php echo sprintf( __( '%s Search Results for ', 'html5blank' ), $wp_query->found_posts ); echo get_search_query(); ?></h1>
+	<section class="waypoint">
+			<div class="jumbo jumbo-about">
+	 			<h1>Search Results</h1>
+	 			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
+	 			<button class="scroll-jumbo">
+					<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
+				</button>
+	 		</div>
+	</section>
 
-			<?php get_template_part('loop'); ?>
+	<section class="tiles" data-scroll>
 
-			<?php get_template_part('pagination'); ?>
+		<?php
+			if(have_posts()):
 
-		</section>
-		<!-- /section -->
-	</main>
+				$i = 0;
 
-<?php get_sidebar(); ?>
+				while(have_posts()) : the_post();
 
-<?php get_footer(); ?>
+				$img = get_field('image');
+
+				if($i % 2 == 0){ ?>
+
+					<div class="row third box-content">
+						<div class="content">
+							<h2><?php the_title(); ?></h2>
+							<p><?php the_excerpt(); ?></p>
+							<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
+						</div>
+						<div class="image" id="kid1" style="background-image: url(<?php echo $img; ?>);"></div>
+					</div>
+
+					<?php $i++; ?>
+
+				<?php } else { ?>
+			
+					<div class="row third box-content">
+						<div class="image" id="kid1" style="background-image: url(<?php echo $img; ?>);"></div>
+						<div class="content">
+							<h2><?php the_title(); ?></h2>
+							<p><?php the_excerpt(); ?></p>
+							<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
+						</div>
+					</div>
+
+					<?php $i++; ?>
+
+				<?php } endwhile; endif; wp_reset_postdata(); ?>
+		
+	</section>
+
+ </main>
+
+ <?php get_footer(); ?>

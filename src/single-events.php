@@ -102,13 +102,8 @@
         map = new google.maps.Map(mapCanvas, mapOptions),
         contentString =
           '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">thoughtbot</h1>'+
-          '<div id="bodyContent"'+
-          '<p>Sveavägen 98</p>'+
-          '</div>'+
-          '</div>',
+          '<p>Event Location</p>'+
+          '</div>',,
         infowindow = new google.maps.InfoWindow({
           content: contentString,
           maxWidth: 300
@@ -116,7 +111,7 @@
         marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
-          title: 'thoughtbot (Sweden)'
+          title: 'ChildSavers'
         });
 
     return {

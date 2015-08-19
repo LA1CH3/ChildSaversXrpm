@@ -17,6 +17,9 @@
 		$cache.contactRadio = $(".contact #field_1_5 ul li input");
 		$cache.desktopnavItem = $(".nav-desktop .menu-item");
 		$cache.scrollJumbo = $(".jumbo .scroll-jumbo");
+		$cache.searchOverlay = $('.search-overlay');
+		$cache.searchTrigger = $('.menu-item-170');
+		$cache.searchExit = $('.cs-search-exit');
 
 		// Init any jquery plugins here
 		// example: $(".slider").slick({....});
@@ -97,17 +100,21 @@
 		function hoverAppear($trigger){
 			$trigger.hover(
 				function(e){
-					e.preventDefault();
-					var $item = $(this).find(".sub-menu");
+					var $item = $(this).children(".sub-menu");
+					var $nestedMenu = $item.find(".sub-menu");
 					$item.stop().slideDown();
+					$nestedMenu.hide();
 				}, function(e){
-					var $item = $(this).find(".sub-menu");
+					var $item = $(this).children(".sub-menu");
 					$item.stop().slideUp();
 				} );
 		}
 
 		clickAppear($cache.mobileExit, $cache.mobileOverlay);
 		clickAppear($cache.mobileShow, $cache.mobileOverlay);
+		clickAppear($cache.searchTrigger, $cache.searchOverlay);
+		clickAppear($cache.searchExit, $cache.searchOverlay);
+
 
 		// debounce that mofo
 		hoverAppear($cache.desktopnavItem);

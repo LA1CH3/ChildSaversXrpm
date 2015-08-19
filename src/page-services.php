@@ -10,7 +10,7 @@
 	
 	<section class="waypoint">
 		<div class="jumbo jumbo-about">
- 			<h1>For Professionals</h1>
+ 			<h1>Services</h1>
  			<img class="city" src="<?php echo get_template_directory_uri() . '/img/ChildSavers_city2.svg'; ?>" alt="Richmond, Virginia">
  			<button class="scroll-jumbo">
 				<img src="<?php echo get_template_directory_uri() . '/img/arrow_home.svg'; ?>" alt="Go Down">
@@ -18,45 +18,30 @@
  		</div>
 	</section>
 
-	<section id="tiles" data-scroll>
-	<?php 
-	$args = array(
-		'post_type' => 'services'
-		);
-	$query = new WP_Query($args);
+	<section class="story" data-scroll>
 
-	?>
-	<?php if($query->have_posts()) : 
-			$i = 0;
-			while($query->have_posts()) : $query->the_post();  
+		<h2>Our Services</h2>
+		<p>We offer a variety of services for parents and professionals who work with children who have experienced trauma.</p>
+		
+	</section>
 
-				$image = get_field('image');
-			
-				if($i % 2 == 0){ ?>
+	<section id="tiles">
 					
 				<div class="row third box-content">
 					<div class="image" id="kid1" style="background-image: url(<?php echo $image; ?>);"></div>
 					<div class="content">
-						<h2><?php the_title(); ?></h2>
-						<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
+						<h2>For Parents</h2>
+						<a class="read-mores" href="<?php echo site_url('/service-type/for-parents/'); ?>">View More</a>
 					</div>
 				</div>
-				<?php $i++; ?>
-
-				<?php } else { ?>
 
 				<div class="row third box-content">
 					<div class="content">
-						<h2><?php the_title(); ?></h2>
-						<a class="read-mores" href="<?php the_permalink(); ?>">Read More</a>
+						<h2>For Professionals</h2>
+						<a class="read-mores" href="<?php echo site_url('/service-type/for-professionals/'); ?>">View More</a>
 					</div>
 					<div class="image" id="kid1" style="background-image: url(<?php echo $image; ?>);"></div>
 				</div>
-				<?php $i++; ?>
-			
-			<?php } ?>
-
-	<?php endwhile; endif; wp_reset_postdata(); ?>
 	</section>
 
 </main>

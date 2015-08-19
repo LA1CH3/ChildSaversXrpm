@@ -47,8 +47,7 @@
 	</section>
 	<section class="shared">
 		<h2 class="cs-header-2">Volunteer Opportunities</h2>
-		<p><strong>Volunteer Mission Statement:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi id modi, cum dignissimos quae explicabo iste, voluptatibus obcaecati in, molestiae nobis ratione. Perspiciatis quasi voluptatibus esse corrupti, suscipit saepe. Id?</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptas, iure, sint. Alias maxime sit ex necessitatibus odit quasi perferendis ducimus cumque debitis possimus natus optio nihil, repellat, fuga magni excepturi.</p>
+		<p><strong>Volunteer Mission Statement:</strong> To increase and deepen the engagement of volunteers and to make them an integral part of the ChildSavers community.</p>
 		<div class="values-slider">
 
 		<?php if(have_rows('slider')):

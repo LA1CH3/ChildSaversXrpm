@@ -4,8 +4,10 @@
 				<div class="newsletter">
 					<div class="search-bar">
 						<span>Sign Up For Our Newsletter</span>
-					 	<form role="search">
-					    <input type="search" placeholder="Enter Search">
+					 	<form role="search" method="POST" action="https://visitor2.constantcontact.com/api/signup">
+					 	<input data-id="ca:input" type="hidden" name="ca" value="fd4030bf-1d41-40de-b5cb-cdc0e57fc362">
+					    <input data-id="email:input" name="email" type="search" placeholder="Enter Email">
+					    <input data-id="url:input" name="url" value="<?php echo site_url('thanks/'); ?>" type="hidden">
 					    <button class="cs-button" type="submit">
 					      Submit
 					    </button>
@@ -40,7 +42,8 @@
 								<a class="rss" target="_blank" href="<?php bloginfo('atom_url'); ?>"></a>
 							</li>
 						</ul>
-						<a class="read-mores" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate</a>
+						<a class="read-mores" target="_blank" href="https://ssl.charityweb.net/childsavers/">Donate</a><br><br><br><br>
+						<a href="<?php echo site_url('/events/'); ?>" target="_blank" class="read-mores">Events</a>
 					</div>
 					<div class="footer-third box-content calendar_wrap">
 						<h2>Calendar</h2>

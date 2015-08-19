@@ -60,12 +60,7 @@
         map = new google.maps.Map(mapCanvas, mapOptions),
         contentString =
           '<div id="content">'+
-          '<div id="siteNotice">'+
-          '</div>'+
-          '<h1 id="firstHeading" class="firstHeading">thoughtbot</h1>'+
-          '<div id="bodyContent"'+
-          '<p>Sveavägen 98</p>'+
-          '</div>'+
+          '<p>ChildSavers<br>200 North 22nd Street<br>Richmond, VA 23233</p>'+
           '</div>',
         infowindow = new google.maps.InfoWindow({
           content: contentString,
@@ -74,7 +69,7 @@
         marker = new google.maps.Marker({
           position: myLatlng,
           map: map,
-          title: 'thoughtbot (Sweden)'
+          title: 'ChildSavers'
         });
 
     return {
@@ -94,7 +89,16 @@
         "elementType": "all",
         "stylers": [
             {
-                "color": "#f38383"
+                "color": "#f2f2f2"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#cce5f7"
             }
         ]
     },
@@ -124,34 +128,7 @@
         "elementType": "geometry.fill",
         "stylers": [
             {
-                "color": "#f7aaa6"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "geometry.stroke",
-        "stylers": [
-            {
-                "color": "#fbd3cd"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.fill",
-        "stylers": [
-            {
-                "color": "#514f4f"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels.text.stroke",
-        "stylers": [
-            {
-                "color": "#fbd3cd"
+                "color": "#65bfeb"
             }
         ]
     },
@@ -187,10 +164,19 @@
         "elementType": "all",
         "stylers": [
             {
-                "color": "#f05a66"
+                "color": "#46bcec"
             },
             {
                 "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#9ad2f2"
             }
         ]
     }

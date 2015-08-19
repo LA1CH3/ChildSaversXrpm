@@ -12,22 +12,27 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
+		<!-- Font Awesome in da house -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
 		<script src="//use.typekit.net/aix6zex.js"></script>
 		<script>try{Typekit.load();}catch(e){}</script>
 		<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.5/slick.css"/>
 
 		<?php wp_head(); ?>
-		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
-        </script>
 
 	</head>
 	<body <?php body_class(); ?>>
+
+	<!-- search overlay -->
+	<div class="search-overlay">
+		<form method="get" action="<?php echo esc_url(home_url()); ?>" role="search">
+			<input class="cs-search" type="search" name="s" placeholder="Type your search here" value=""/>
+			<input class="cs-submit read-mores" type="submit" role="button" value="Search"/>
+		</form>
+		<a href="#" class="read-mores cs-search-exit">Back</a>
+	</div>
+	<!-- end search overlay -->
 
 		<!-- wrapper -->
 		<div class="wrapper">

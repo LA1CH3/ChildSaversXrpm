@@ -121,7 +121,7 @@ h1, h2, h3, p {
     color: black;
 
     @include media(769px) {
-      font-size: 4.8em;
+      font-size: 4.4em;
       letter-spacing: 1px;
     }
   }

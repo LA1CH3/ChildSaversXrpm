@@ -286,7 +286,7 @@ function html5wp_index($length) // Create 20 Word Callback for Index page Excerp
 // Create 40 Word Callback for Custom Post Excerpts, call using html5wp_excerpt('html5wp_custom_post');
 function html5wp_custom_post($length)
 {
-    return 40;
+    return 20;
 }
 
 // Create the Custom Excerpts callback
@@ -445,3 +445,8 @@ function serviceQuery($query){
     }
 }
 add_action('pre_get_posts', 'serviceQuery');
+
+function custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );

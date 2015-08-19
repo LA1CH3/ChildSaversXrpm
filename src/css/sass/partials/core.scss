@@ -24,7 +24,7 @@
 	.scroll-down {
 		position: absolute;
 		z-index: 10;
-		bottom: 40px;
+		bottom: 15vh;
 		background-color: rgba(0,0,0,0);
 		color: $hotpink;
 		border: 3px solid $hotpink;
@@ -137,9 +137,6 @@
 	}
 	@include media(1400px){
 		min-height: 600px;
-	}
-	@include media(1800px){
-		min-height: 700px;
 	}
 	.scroll-jumbo {
 		background-color: rgba(0,0,0,0);
@@ -303,6 +300,10 @@
 	font-size: 120%;
 }
 
+.page-template-default .single-post-content {
+	padding-top: 145px;
+}
+
 // single post page
 .single-post-content {
 	h3 {
@@ -325,38 +326,42 @@
 				margin-bottom: 15px;
 				&:before {
 					display: inline-block;
-					content: url("img/arrow1.png");
+					background-image: url("img/arrow1.png");
+					background-position: 13px;
+					background-size: 34%;
+					background-repeat: no-repeat;
+					content: "";
 					font-size: 155%;
 					font-weight: 600;
-					height: 55px;
-					width: 55px;
-					padding-bottom: 7px;
-					padding-right: 3px;
+					height: 45px;
+					width: 45px;
 					padding-top: 7px;
 					border: 2px solid $hotpink;
 					border-radius: 50px;
 					margin-right: 10px;
 					position: relative;
-					top: 5px;
+					top: 14px;
 				}
 			}
 			&[rel="next"] {
 				float: right;
 				&:after {
 					display: inline-block;
-					content: url("img/arrow2.png");
+					background-image: url("img/arrow2.png");
+					background-position: 13px;
+					background-size: 34%;
+					background-repeat: no-repeat;
+					content: "";
 					font-size: 155%;
 					font-weight: 600;
-					height: 55px;
-					width: 55px;
+					height: 45px;
+					width: 45px;
 					padding-top: 7px;
-					padding-bottom: 7px;
-					padding-left: 3px;
 					border: 2px solid $hotpink;
 					border-radius: 50px;
 					margin-left: 10px;
 					position: relative;
-					top: 5px;
+					top: 14px;
 				}
 			}
 		}
@@ -667,9 +672,9 @@
 	padding: 65px 10%;
 }
 
-.services .box-content h2 {
+/*.services .box-content h2 {
 	margin-bottom: 85px;
-}
+}*/
 
 .checkBorder {
 	border: 3px solid $hotpink;
@@ -731,5 +736,66 @@
   		}
   	}
   }
+
+}
+
+// Search overlay that appears when you click mag glass on main nav
+.search-overlay {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	z-index: 21;
+	background-color: rgba($hotpink, 0.9);
+	padding-top: 30vh;
+	padding-left: 20vw;
+	display: none;
+	@include media(768px){
+		padding-top: 42vh;
+		padding-left: 34vw;
+	}
+	.cs-search {
+		width: 35%;
+		display: inline-block;
+		min-width: 200px;
+		background-color: rgba(0,0,0,0);
+		color: white;
+		padding: 2% 1%;
+		font-size: 125%;
+		&:focus {
+			border-color: white;
+		}
+		@include placeholder {
+			color: white;
+		}
+	}
+	.cs-submit {
+		display: inline-block;
+		background-color: rgba(0,0,0,0);
+		border: 1px solid white;
+		background-image: none;
+		position: relative;
+		bottom: 3px;
+		padding: 2.55% 1%;
+		width: 15%;
+		min-width: 150px;
+		&:hover {
+			background-color: white;
+			color: $hotpink;
+		}
+	}
+	.cs-search-exit {
+		position: absolute;
+	    color: white;
+	    border: 1px solid white;
+	    background-image: none;
+	    bottom: 100px;
+	    left: 0;
+	    right: 0;
+	    margin-left: auto;
+	    margin-right: auto;
+	    z-index: 82;
+	    max-width: 200px;
+	    text-align: center;
+	}
 
 }
